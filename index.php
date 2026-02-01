@@ -106,7 +106,7 @@ function getVipBadge($vipLevel) {
     case 4:
       return ['name' => 'Platinum', 'class' => 'bg-blue-500 text-white'];
     case 5:
-      return ['name' => 'Diamond', 'class' => 'bg-purple-600 text-white'];
+      return ['name' => 'Diamond', 'class' => 'bg-orange-600 text-white'];
     default:
       return ['name' => 'Bronze', 'class' => 'bg-orange-600 text-white'];
   }
@@ -1407,9 +1407,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
       transform: translateX(-50%);
       width: 5px;
       height: 5px;
-      background: #8b5cf6;
+      background: #ff6b35;
       border-radius: 50%;
-      box-shadow: 0 0 8px #8b5cf6;
+      box-shadow: 0 0 8px #ff6b35;
     }
     
     /* Add space at bottom of page to prevent content hiding */
@@ -1468,7 +1468,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
     
     .swiper-pagination-bullet-active {
-      background: #8b5cf6;
+      background: #ff6b35;
     }
     
     /* Payment method selector */
@@ -1483,7 +1483,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
     
     .payment-method.selected {
-      border-color: #8b5cf6;
+      border-color: #ff6b35;
       box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
     }
     
@@ -1505,7 +1505,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
       padding: 2px 8px;
       border-radius: 4px;
       font-size: 12px;
-      color: #8b5cf6;
+      color: #ff6b35;
     }
     
     /* Animated background for premium sections */
@@ -1571,13 +1571,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     
     /* Neon text effect */
     .neon-text {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #8b5cf6, 0 0 20px #8b5cf6;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b35, 0 0 20px #ff6b35;
       animation: flicker 1.5s infinite alternate;
     }
     
     @keyframes flicker {
       0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #8b5cf6, 0 0 20px #8b5cf6;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b35, 0 0 20px #ff6b35;
       }
       20%, 24%, 55% {        
         text-shadow: none;
@@ -1597,7 +1597,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+      background: linear-gradient(45deg, #ff6b35, #ff8c42, #ffa552);
       border-radius: 18px;
       z-index: -1;
       opacity: 0.7;
@@ -1639,7 +1639,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
     
     .custom-checkbox:checked {
-      background: #8b5cf6;
+      background: #ff6b35;
     }
     
     .custom-checkbox:checked::after {
@@ -1920,7 +1920,7 @@ header.glass-effect {
             
             <div class="p-3 border-b border-gray-700 flex justify-between items-center">
               <h3 class="font-semibold text-white">Notifications</h3>
-              <button class="text-xs text-indigo-400 hover:text-indigo-300">
+              <button class="text-xs text-orange-400 hover:text-orange-300">
                 Mark all as read
               </button>
             </div>
@@ -1982,7 +1982,7 @@ header.glass-effect {
 <style>
   .hero-dots{ display:flex; justify-content:center; gap:6px; margin-top:8px; }
   .hero-dot{ width:6px; height:6px; border-radius:50%; background:#94a3b8; opacity:.5; }
-  .hero-dot.active{ background:#8b5cf6; opacity:1; }
+  .hero-dot.active{ background:#ff6b35; opacity:1; }
 </style>
 
 <style>
@@ -2157,7 +2157,7 @@ function goBack() {
             </div>
           <?php else: ?>
             <button onclick="showVipModal()" class="bg-white/5 hover:bg-white/10 px-3 py-1 rounded-full text-xs font-semibold flex items-center transition-colors">
-              <i class="fas fa-gem mr-1 text-purple-400"></i> UPGRADE
+              <i class="fas fa-gem mr-1 text-orange-400"></i> UPGRADE
             </button>
           <?php endif; ?>
         </div>
@@ -2210,7 +2210,7 @@ function goBack() {
               <p class="text-[11px] text-gray-400">Total Invested</p>
               <p class="text-lg font-semibold text-white">₹<?= number_format($analytics['total_invested']) ?></p>
             </div>
-            <i class="fas fa-chart-line text-indigo-400 text-lg"></i>
+            <i class="fas fa-chart-line text-orange-400 text-lg"></i>
           </div>
 
           <!-- Total Profit -->
@@ -2243,7 +2243,7 @@ function goBack() {
       
       <!-- Plan Category Tabs -->
       <div class="flex gap-2 mb-4 overflow-x-auto pb-2">
-        <button onclick="switchPlanCategory('small')" id="tab-small" class="px-4 py-2 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap transition-all tab-btn active" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white;">
+        <button onclick="switchPlanCategory('small')" id="tab-small" class="px-4 py-2 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap transition-all tab-btn active" style="background: linear-gradient(135deg, #ff6b35, #ff8c42); color: white;">
           <i class="fas fa-bolt mr-1"></i>Small Cap 
         </button>
         <button onclick="switchPlanCategory('mid')" id="tab-mid" class="px-4 py-2 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap transition-all tab-btn" style="background: rgba(255,255,255,0.1); color: #9ca3af;">
@@ -2255,7 +2255,7 @@ function goBack() {
       </div>
 
       <div class="flex justify-between items-end mb-4">
-        <h2 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse">💎 Active Plans</h2>
+        <h2 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 animate-pulse">💎 Active Plans</h2>
         <span class="text-xs text-white bg-gradient-to-r from-green-500 to-emerald-600 px-3 py-1.5 rounded-lg font-bold shadow-lg shadow-green-500/50">✨ Fixed 35% ROI ✨</span>
       </div>
 
@@ -3038,9 +3038,9 @@ function goBack() {
     <!-- Header -->
     <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
       <h3 class="text-lg font-bold text-white flex items-center gap-2">
-        <i class="fas fa-bell text-indigo-400"></i> Notifications
+        <i class="fas fa-bell text-orange-400"></i> Notifications
       </h3>
-      <button onclick="markAllRead()" class="text-xs text-indigo-400">
+      <button onclick="markAllRead()" class="text-xs text-orange-400">
         Mark all read
       </button>
     </div>
@@ -3056,7 +3056,7 @@ function goBack() {
         <?php foreach($notifications as $n): ?>
           <div
             class="p-4 rounded-xl border border-white/10
-            <?= !$n['seen'] ? 'bg-indigo-500/10' : 'bg-white/5' ?>">
+            <?= !$n['seen'] ? 'bg-orange-500/10' : 'bg-white/5' ?>">
             
             <p class="text-sm text-white leading-snug">
               <?= htmlspecialchars($n['title']) ?>
@@ -3066,7 +3066,7 @@ function goBack() {
             </p>
 
             <?php if(!$n['seen']): ?>
-              <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded-full bg-indigo-600 text-white">
+              <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded-full bg-orange-600 text-white">
                 NEW
               </span>
             <?php endif; ?>
@@ -3112,8 +3112,8 @@ function markAllRead() {
     headers: {'Content-Type':'application/x-www-form-urlencoded'},
     body: 'action=mark_notifications'
   }).then(()=>{
-    document.querySelectorAll('#notifPopup .bg-indigo-500\\/10')
-      .forEach(el=>el.classList.replace('bg-indigo-500/10','bg-white/5'));
+    document.querySelectorAll('#notifPopup .bg-orange-500\\/10')
+      .forEach(el=>el.classList.replace('bg-orange-500/10','bg-white/5'));
   });
 }
 </script>

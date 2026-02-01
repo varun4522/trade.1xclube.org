@@ -115,7 +115,7 @@ $games = [
 
 // Promotions data
 $promotions = [
-    ['title' => 'Welcome Bonus', 'description' => 'Get 200% bonus on your first deposit up to ₹10,000', 'icon' => 'fas fa-gift', 'color' => 'bg-purple-500', 'code' => 'WELCOME200'],
+    ['title' => 'Welcome Bonus', 'description' => 'Get 200% bonus on your first deposit up to ₹10,000', 'icon' => 'fas fa-gift', 'color' => 'bg-orange-500', 'code' => 'WELCOME200'],
     ['title' => 'Daily Rewards', 'description' => 'Login daily to claim free coins up to ₹5,000', 'icon' => 'fas fa-calendar-alt', 'color' => 'bg-blue-500', 'code' => 'DAILYFREE'],
     ['title' => 'VIP Program', 'description' => 'Exclusive benefits for VIP members including cashback', 'icon' => 'fas fa-crown', 'color' => 'bg-yellow-500', 'code' => 'VIPONLY'],
     ['title' => 'Referral Bonus', 'description' => 'Earn 15% of your friends deposits for life', 'icon' => 'fas fa-user-plus', 'color' => 'bg-green-500', 'code' => 'REFER15'],
@@ -127,9 +127,9 @@ $promotions = [
 $activities = [
     ['icon' => 'fa-coins', 'text' => 'You received 500 bonus coins', 'time' => 'Just now', 'color' => 'text-yellow-400'],
     ['icon' => 'fa-trophy', 'text' => 'Level up! You reached level '.$userLevel, 'time' => '5 mins ago', 'color' => 'text-blue-400'],
-    ['icon' => 'fa-bell', 'text' => 'New game available: Trade Club Deluxe', 'time' => '1 hour ago', 'color' => 'text-purple-400'],
+    ['icon' => 'fa-bell', 'text' => 'New game available: Trade Club Deluxe', 'time' => '1 hour ago', 'color' => 'text-orange-400'],
     ['icon' => 'fa-gift', 'text' => 'Daily reward available to claim', 'time' => '3 hours ago', 'color' => 'text-green-400'],
-    ['icon' => 'fa-user-plus', 'text' => 'Friend joined using your referral code', 'time' => '5 hours ago', 'color' => 'text-indigo-400'],
+    ['icon' => 'fa-user-plus', 'text' => 'Friend joined using your referral code', 'time' => '5 hours ago', 'color' => 'text-orange-400'],
     ['icon' => 'fa-star', 'text' => 'VIP status unlocked! Special rewards available', 'time' => '1 day ago', 'color' => 'text-orange-400'],
 ];
 
@@ -250,11 +250,11 @@ $paymentMethods = [
     }
     
     .btn-gradient {
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa552 100%);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     }
     
     .btn-gradient:hover {
@@ -319,12 +319,12 @@ $paymentMethods = [
     }
     
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5); }
-      50% { box-shadow: 0 0 25px 15px rgba(139, 92, 246, 0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.5); }
+      50% { box-shadow: 0 0 25px 15px rgba(255, 107, 53, 0); }
     }
     
     .text-gradient {
-      background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -341,7 +341,7 @@ $paymentMethods = [
       content: '';
       position: absolute;
       inset: -5px;
-      background: linear-gradient(135deg, #8b5cf6, #ec4899, #6366f1);
+      background: linear-gradient(135deg, #ff6b35, #ff8c42, #ffa552);
       border-radius: 20px;
       z-index: -1;
       filter: blur(10px);

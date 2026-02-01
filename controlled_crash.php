@@ -80,11 +80,11 @@ try {
         .toggle-checkbox:checked {
             @apply right-0 border-blue-500;
             right: 0;
-            border-color: #3B82F6;
+            border-color: #ff6b35;
         }
         .toggle-checkbox:checked + .toggle-label {
             @apply bg-blue-500;
-            background-color: #3B82F6;
+            background-color: #ff6b35;
         }
     </style>
 </head>

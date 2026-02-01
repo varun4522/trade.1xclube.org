@@ -154,7 +154,7 @@ try {
     <div class="sidebar w-64 flex-shrink-0 py-6 animate__animated animate__fadeInLeft">
         <div class="px-6">
             <div class="flex items-center space-x-3 mb-6">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
@@ -248,13 +248,13 @@ try {
         <!-- Filters -->
         <div class="card mb-6">
             <form method="GET" class="flex flex-wrap gap-4 p-6">
-                <select name="result" class="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <select name="result" class="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
                     <option value="">All Results</option>
                     <option value="win" <?php echo $result_filter === 'win' ? 'selected' : ''; ?>>Win</option>
                     <option value="loss" <?php echo $result_filter === 'loss' ? 'selected' : ''; ?>>Loss</option>
                     <option value="cashout" <?php echo $result_filter === 'cashout' ? 'selected' : ''; ?>>Cashout</option>
                 </select>
-                <select name="user_id" class="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <select name="user_id" class="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
                     <option value="">All Users</option>
                     <?php foreach ($users as $user): ?>
                         <option value="<?php echo $user['id']; ?>" <?php echo $user_filter == $user['id'] ? 'selected' : ''; ?>>
@@ -262,7 +262,7 @@ try {
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <button type="submit" class="filter-btn bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded transition duration-200">
+                <button type="submit" class="filter-btn bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded transition duration-200">
                     Apply Filters
                 </button>
                 <a href="bets.php" class="filter-btn bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded transition duration-200">
@@ -276,7 +276,7 @@ try {
             <div class="px-6 py-4 border-b border-gray-800 flex justify-between items-center">
                 <h3 class="text-lg font-medium text-white">Bet History</h3>
                 <div class="relative">
-                    <input type="text" placeholder="Search bets..." class="bg-gray-800 border border-gray-700 rounded px-4 py-2 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <input type="text" placeholder="Search bets..." class="bg-gray-800 border border-gray-700 rounded px-4 py-2 pl-10 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
                     <svg class="h-5 w-5 text-gray-400 absolute left-3 top-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
@@ -317,7 +317,7 @@ try {
                                     ₹<?php echo number_format($bet['bet_amount'], 2); ?>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
-                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 border border-purple-500">
+                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 border border-orange-500">
                                         <?php echo $bet['bomb_count']; ?>
                                     </span>
                                 </td>
@@ -329,7 +329,7 @@ try {
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-900 text-purple-200">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-900 text-orange-200">
                                         x<?php echo number_format($bet['multiplier'], 2); ?>
                                     </span>
                                 </td>
@@ -370,7 +370,7 @@ try {
                     
                     for ($i = $start; $i <= $end; $i++): ?>
                         <a href="?page=<?php echo $i; ?>&result=<?php echo urlencode($result_filter); ?>&user_id=<?php echo $user_filter; ?>" 
-                           class="pagination-btn px-3 py-1 rounded <?php echo $i === $page ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'; ?>">
+                           class="pagination-btn px-3 py-1 rounded <?php echo $i === $page ? 'bg-orange-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'; ?>">
                             <?php echo $i; ?>
                         </a>
                     <?php endfor; 
