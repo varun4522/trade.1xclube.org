@@ -1,0 +1,335 @@
+[2026-01-03 22:43:17] --- New Request Started ---
+[2026-01-03 22:43:17] Order Generated: ORD17674513976093 | Amount: 300.00
+[2026-01-03 22:43:17] Insert Success for Order: ORD17674513976093
+[2026-01-03 22:43:18] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114424166","mchOrderNo":"ORD17674513976093","sign":"4c81acde7d0bbbacebf14f124cafd3d1","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 22:43:17","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767451398756juhfr","respCode":"SUCCESS"}
+[2026-01-03 22:43:18] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767451398756juhfr. Attempting Update...
+[2026-01-03 22:43:18] Update Query Executed Successfully.
+[2026-01-03 22:56:35] --- New Request Started ---
+[2026-01-03 22:56:35] Order Generated: ORD17674521955079 | Amount: 100.00
+[2026-01-03 22:56:35] Insert Success for Order: ORD17674521955079
+[2026-01-03 22:56:36] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000114426242","mchOrderNo":"ORD17674521955079","sign":"4fd395c52baa79918610b44a85ce3c8b","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 22:56:35","payInfo":"https://api.ffgo.net/upi/checkout/jMOZ","respCode":"SUCCESS"}
+[2026-01-03 22:56:36] URL Found: https://api.ffgo.net/upi/checkout/jMOZ. Attempting Update...
+[2026-01-03 22:56:36] Update Query Executed Successfully.
+[2026-01-03 23:25:18] --- New Request Started ---
+[2026-01-03 23:25:18] Order Generated: ORD17674539187939 | Amount: 500.00
+[2026-01-03 23:25:18] Insert Success for Order: ORD17674539187939
+[2026-01-03 23:25:18] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000114431120","mchOrderNo":"ORD17674539187939","sign":"b347662e3a00698bda64908352c6be61","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 23:25:18","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767453918669m2suu","respCode":"SUCCESS"}
+[2026-01-03 23:25:18] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767453918669m2suu. Attempting Update...
+[2026-01-03 23:25:18] Update Query Executed Successfully.
+[2026-01-03 23:35:14] --- New Request Started ---
+[2026-01-03 23:35:14] Order Generated: ORD17674545141814 | Amount: 300.00
+[2026-01-03 23:35:14] Insert Success for Order: ORD17674545141814
+[2026-01-03 23:35:16] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114432747","mchOrderNo":"ORD17674545141814","sign":"6549e9dcedb4aa0b859c83f83fec5222","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 23:35:14","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767454516179saudo","respCode":"SUCCESS"}
+[2026-01-03 23:35:16] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767454516179saudo. Attempting Update...
+[2026-01-03 23:35:16] Update Query Executed Successfully.
+[2026-01-03 23:35:36] --- New Request Started ---
+[2026-01-03 23:35:36] Order Generated: ORD17674545363166 | Amount: 300.00
+[2026-01-03 23:35:36] Insert Success for Order: ORD17674545363166
+[2026-01-03 23:35:37] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114432813","mchOrderNo":"ORD17674545363166","sign":"aade6f668376dbb609948b75e201d7f7","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 23:35:36","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17674545371971tch8","respCode":"SUCCESS"}
+[2026-01-03 23:35:37] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17674545371971tch8. Attempting Update...
+[2026-01-03 23:35:37] Update Query Executed Successfully.
+[2026-01-04 00:11:51] --- New Request Started ---
+[2026-01-04 00:11:51] Order Generated: ORD17674567118390 | Amount: 50000.00
+[2026-01-04 00:11:51] Insert Success for Order: ORD17674567118390
+[2026-01-04 00:11:52] API Response: {"tradeResult":"1","oriAmount":"50000.00","tradeAmount":"50000.00","mchId":"100567121","orderNo":"1000114438104","mchOrderNo":"ORD17674567118390","sign":"dced0b3ddb3286ad71d17830d69629bf","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-04 00:11:51","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767456712334smsrn","respCode":"SUCCESS"}
+[2026-01-04 00:11:52] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767456712334smsrn. Attempting Update...
+[2026-01-04 00:11:52] Update Query Executed Successfully.
+[2026-01-05 16:51:07] --- New Request Started ---
+[2026-01-05 16:51:07] Order Generated: ORD17676030674692 | Amount: 300.00
+[2026-01-05 16:51:07] Insert Success for Order: ORD17676030674692
+[2026-01-05 16:51:07] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114633781","mchOrderNo":"ORD17676030674692","sign":"ecc79135204b6edb81b2ab5c5f6e9406","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-05 16:51:07","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17676030677664noh7","respCode":"SUCCESS"}
+[2026-01-05 16:51:07] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17676030677664noh7. Attempting Update...
+[2026-01-05 16:51:07] Update Query Executed Successfully.
+[2026-01-06 18:34:00] --- New Request Started ---
+[2026-01-06 18:34:00] Order Generated: ORD17676956406786 | Amount: 300.00
+[2026-01-06 18:34:00] Insert Success for Order: ORD17676956406786
+[2026-01-06 18:34:01] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114765953","mchOrderNo":"ORD17676956406786","sign":"81f7d0241910195278f3415ff79af2e2","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-06 18:34:00","payInfo":"https://www.mv-pay.net/payment?no=T40929758265105","respCode":"SUCCESS"}
+[2026-01-06 18:34:01] URL Found: https://www.mv-pay.net/payment?no=T40929758265105. Attempting Update...
+[2026-01-06 18:34:01] Update Query Executed Successfully.
+[2026-01-06 18:34:11] --- New Request Started ---
+[2026-01-06 18:34:11] Order Generated: ORD17676956517641 | Amount: 300.00
+[2026-01-06 18:34:11] Insert Success for Order: ORD17676956517641
+[2026-01-06 18:34:12] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114765967","mchOrderNo":"ORD17676956517641","sign":"dc95907968f4e62dd8dcbb1a84d98bed","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-06 18:34:11","payInfo":"https://www.mv-pay.net/payment?no=T52267114935858","respCode":"SUCCESS"}
+[2026-01-06 18:34:12] URL Found: https://www.mv-pay.net/payment?no=T52267114935858. Attempting Update...
+[2026-01-06 18:34:12] Update Query Executed Successfully.
+[2026-01-07 11:18:01] --- New Request Started ---
+[2026-01-07 11:18:01] Order Generated: ORD17677558811054 | Amount: 300.00
+[2026-01-07 11:18:01] Insert Success for Order: ORD17677558811054
+[2026-01-07 11:18:02] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000114858271","mchOrderNo":"ORD17677558811054","sign":"14a39651c912b5db233a18544cb9b0ee","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-07 11:18:01","payInfo":"https://api.paymentapi111.com/payoption/payment.html?orderNo=S260107084801QV2","respCode":"SUCCESS"}
+[2026-01-07 11:18:02] URL Found: https://api.paymentapi111.com/payoption/payment.html?orderNo=S260107084801QV2. Attempting Update...
+[2026-01-07 11:18:02] Update Query Executed Successfully.
+[2026-01-07 11:19:40] --- New Request Started ---
+[2026-01-07 11:19:40] Order Generated: ORD17677559805303 | Amount: 100.00
+[2026-01-07 11:19:40] Insert Success for Order: ORD17677559805303
+[2026-01-07 11:19:41] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000114858341","mchOrderNo":"ORD17677559805303","sign":"b3b65caf847dffdae3ccf2818e8f070a","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-07 11:19:40","payInfo":"https://api.paymentapi111.com/payoption/payment.html?orderNo=S260107084941HD0","respCode":"SUCCESS"}
+[2026-01-07 11:19:41] URL Found: https://api.paymentapi111.com/payoption/payment.html?orderNo=S260107084941HD0. Attempting Update...
+[2026-01-07 11:19:41] Update Query Executed Successfully.
+[2026-01-08 16:05:27] --- New Request Started ---
+[2026-01-08 16:05:27] Order Generated: ORD17678595272270 | Amount: 300.00
+[2026-01-08 16:05:27] Insert Success for Order: ORD17678595272270
+[2026-01-08 16:05:30] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115003192","mchOrderNo":"ORD17678595272270","sign":"d1cbed8bc580b029c50d2eb46c6302f4","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-08 16:05:27","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767859530178q7en0","respCode":"SUCCESS"}
+[2026-01-08 16:05:30] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767859530178q7en0. Attempting Update...
+[2026-01-08 16:05:30] Update Query Executed Successfully.
+[2026-01-08 23:05:17] --- New Request Started ---
+[2026-01-08 23:05:17] Order Generated: ORD17678847173113 | Amount: 50000.00
+[2026-01-08 23:05:17] Insert Success for Order: ORD17678847173113
+[2026-01-08 23:05:17] --- New Request Started ---
+[2026-01-08 23:05:17] Order Generated: ORD17678847173237 | Amount: 50000.00
+[2026-01-08 23:05:17] Insert Success for Order: ORD17678847173237
+[2026-01-08 23:05:18] API Response: {"tradeResult":"1","oriAmount":"50000.00","tradeAmount":"50000.00","mchId":"100567121","orderNo":"1000115068855","mchOrderNo":"ORD17678847173113","sign":"79b6554830991049c1e5f82127da2be8","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-08 23:05:17","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767884718232icu1b","respCode":"SUCCESS"}
+[2026-01-08 23:05:18] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767884718232icu1b. Attempting Update...
+[2026-01-08 23:05:18] Update Query Executed Successfully.
+[2026-01-08 23:05:19] API Response: {"tradeResult":"1","oriAmount":"50000.00","tradeAmount":"50000.00","mchId":"100567121","orderNo":"1000115068861","mchOrderNo":"ORD17678847173237","sign":"9f7edac1d4c8d86dbb2cb7a82fe07023","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-08 23:05:17","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767884719005lgp7m","respCode":"SUCCESS"}
+[2026-01-08 23:05:19] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767884719005lgp7m. Attempting Update...
+[2026-01-08 23:05:19] Update Query Executed Successfully.
+[2026-01-09 12:53:16] --- New Request Started ---
+[2026-01-09 12:53:16] Order Generated: ORD17679343967189 | Amount: 500.00
+[2026-01-09 12:53:16] Insert Success for Order: ORD17679343967189
+[2026-01-09 12:53:17] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000115146682","mchOrderNo":"ORD17679343967189","sign":"28cb5c7449cae3125bdde157d77961be","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-09 12:53:16","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17679343970328jiff","respCode":"SUCCESS"}
+[2026-01-09 12:53:17] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17679343970328jiff. Attempting Update...
+[2026-01-09 12:53:17] Update Query Executed Successfully.
+[2026-01-09 20:50:17] --- New Request Started ---
+[2026-01-09 20:50:17] Order Generated: ORD17679630175599 | Amount: 300.00
+[2026-01-09 20:50:17] Insert Success for Order: ORD17679630175599
+[2026-01-09 20:50:19] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115188649","mchOrderNo":"ORD17679630175599","sign":"89ca5036cf363803b5beaca65740f386","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-09 20:50:17","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17679630196236msvg","respCode":"SUCCESS"}
+[2026-01-09 20:50:19] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17679630196236msvg. Attempting Update...
+[2026-01-09 20:50:19] Update Query Executed Successfully.
+[2026-01-09 22:53:42] --- New Request Started ---
+[2026-01-09 22:53:42] Order Generated: ORD17679704221266 | Amount: 100.00
+[2026-01-09 22:53:42] Insert Success for Order: ORD17679704221266
+[2026-01-09 22:53:43] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-09 22:53:43] Failed to parse URL from response.
+[2026-01-09 22:53:45] --- New Request Started ---
+[2026-01-09 22:53:45] Order Generated: ORD17679704258994 | Amount: 100.00
+[2026-01-09 22:53:45] Insert Success for Order: ORD17679704258994
+[2026-01-09 22:53:45] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000115212877","mchOrderNo":"ORD17679704258994","sign":"67b3fc1b805131c832f47878fba2a5bb","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-09 22:53:45","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1767970425731kcz8q","respCode":"SUCCESS"}
+[2026-01-09 22:53:45] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1767970425731kcz8q. Attempting Update...
+[2026-01-09 22:53:45] Update Query Executed Successfully.
+[2026-01-10 13:31:35] --- New Request Started ---
+[2026-01-10 13:31:35] Order Generated: ORD17680230954035 | Amount: 100.00
+[2026-01-10 13:31:35] Insert Success for Order: ORD17680230954035
+[2026-01-10 13:31:36] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000115294323","mchOrderNo":"ORD17680230954035","sign":"bbe97d788502692e095b8c3bd5afbea8","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 13:31:35","payInfo":"https://api.ffgo.net/upi/checkout/k5b5","respCode":"SUCCESS"}
+[2026-01-10 13:31:36] URL Found: https://api.ffgo.net/upi/checkout/k5b5. Attempting Update...
+[2026-01-10 13:31:36] Update Query Executed Successfully.
+[2026-01-10 19:33:05] --- New Request Started ---
+[2026-01-10 19:33:05] Order Generated: ORD17680447857948 | Amount: 100.00
+[2026-01-10 19:33:05] Insert Success for Order: ORD17680447857948
+[2026-01-10 19:33:06] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000115327859","mchOrderNo":"ORD17680447857948","sign":"7957e2a7049f0132ed3c431a6ad7b8c2","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 19:33:05","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768044786172y86k5","respCode":"SUCCESS"}
+[2026-01-10 19:33:06] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768044786172y86k5. Attempting Update...
+[2026-01-10 19:33:06] Update Query Executed Successfully.
+[2026-01-10 19:33:15] --- New Request Started ---
+[2026-01-10 19:33:15] Order Generated: ORD17680447958656 | Amount: 300.00
+[2026-01-10 19:33:15] Insert Success for Order: ORD17680447958656
+[2026-01-10 19:33:15] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115327870","mchOrderNo":"ORD17680447958656","sign":"f0073b05dde543c6c6d4f7e7a54c8dfc","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 19:33:15","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768044795408qap3l","respCode":"SUCCESS"}
+[2026-01-10 19:33:15] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768044795408qap3l. Attempting Update...
+[2026-01-10 19:33:15] Update Query Executed Successfully.
+[2026-01-10 21:06:49] --- New Request Started ---
+[2026-01-10 21:06:49] Order Generated: ORD17680504094286 | Amount: 500.00
+[2026-01-10 21:06:49] Insert Success for Order: ORD17680504094286
+[2026-01-10 21:06:51] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000115339447","mchOrderNo":"ORD17680504094286","sign":"f2d56abe958a923ebbc1673b7038152e","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 21:06:49","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768050410829ggozv","respCode":"SUCCESS"}
+[2026-01-10 21:06:51] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768050410829ggozv. Attempting Update...
+[2026-01-10 21:06:51] Update Query Executed Successfully.
+[2026-01-10 21:13:30] --- New Request Started ---
+[2026-01-10 21:13:30] Order Generated: ORD17680508108718 | Amount: 300.00
+[2026-01-10 21:13:30] Insert Success for Order: ORD17680508108718
+[2026-01-10 21:13:31] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115340708","mchOrderNo":"ORD17680508108718","sign":"2b4cee56a6afe5c0b8cdaa3810e0d4de","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 21:13:30","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768050811735ydnce","respCode":"SUCCESS"}
+[2026-01-10 21:13:31] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768050811735ydnce. Attempting Update...
+[2026-01-10 21:13:31] Update Query Executed Successfully.
+[2026-01-10 21:19:24] --- New Request Started ---
+[2026-01-10 21:19:24] Order Generated: ORD17680511644562 | Amount: 300.00
+[2026-01-10 21:19:24] Insert Success for Order: ORD17680511644562
+[2026-01-10 21:19:25] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115341738","mchOrderNo":"ORD17680511644562","sign":"a8f00b96e7145854ed749f41cf0ba116","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 21:19:24","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768051165104d62ii","respCode":"SUCCESS"}
+[2026-01-10 21:19:25] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768051165104d62ii. Attempting Update...
+[2026-01-10 21:19:25] Update Query Executed Successfully.
+[2026-01-10 21:19:36] --- New Request Started ---
+[2026-01-10 21:19:36] Order Generated: ORD17680511767512 | Amount: 350.00
+[2026-01-10 21:19:36] Insert Success for Order: ORD17680511767512
+[2026-01-10 21:19:38] API Response: {"tradeResult":"1","oriAmount":"350.00","tradeAmount":"350.00","mchId":"100567121","orderNo":"1000115341783","mchOrderNo":"ORD17680511767512","sign":"82754e292f8f05c6107c00a199128b6a","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 21:19:36","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17680511780055qwtg","respCode":"SUCCESS"}
+[2026-01-10 21:19:38] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17680511780055qwtg. Attempting Update...
+[2026-01-10 21:19:38] Update Query Executed Successfully.
+[2026-01-10 21:27:51] --- New Request Started ---
+[2026-01-10 21:27:51] Order Generated: ORD17680516715890 | Amount: 350.00
+[2026-01-10 21:27:51] Insert Success for Order: ORD17680516715890
+[2026-01-10 21:27:52] API Response: {"tradeResult":"1","oriAmount":"350.00","tradeAmount":"350.00","mchId":"100567121","orderNo":"1000115343104","mchOrderNo":"ORD17680516715890","sign":"f9d33df3c806f4e3c4c55a09e569054c","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 21:27:51","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768051672128ka918","respCode":"SUCCESS"}
+[2026-01-10 21:27:52] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768051672128ka918. Attempting Update...
+[2026-01-10 21:27:52] Update Query Executed Successfully.
+[2026-01-10 23:12:28] --- New Request Started ---
+[2026-01-10 23:12:28] Order Generated: ORD17680579481600 | Amount: 200.00
+[2026-01-10 23:12:28] Insert Success for Order: ORD17680579481600
+[2026-01-10 23:12:28] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-10 23:12:28] Failed to parse URL from response.
+[2026-01-10 23:12:33] --- New Request Started ---
+[2026-01-10 23:12:33] Order Generated: ORD17680579533587 | Amount: 300.00
+[2026-01-10 23:12:33] Insert Success for Order: ORD17680579533587
+[2026-01-10 23:12:35] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115368410","mchOrderNo":"ORD17680579533587","sign":"1c853028da566cb189f73553f6894e76","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 23:12:33","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768057954907xn5cr","respCode":"SUCCESS"}
+[2026-01-10 23:12:35] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768057954907xn5cr. Attempting Update...
+[2026-01-10 23:12:35] Update Query Executed Successfully.
+[2026-01-10 23:14:18] --- New Request Started ---
+[2026-01-10 23:14:18] Order Generated: ORD17680580586101 | Amount: 200.00
+[2026-01-10 23:14:18] Insert Success for Order: ORD17680580586101
+[2026-01-10 23:14:19] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-10 23:14:19] Failed to parse URL from response.
+[2026-01-10 23:14:23] --- New Request Started ---
+[2026-01-10 23:14:23] Order Generated: ORD17680580631269 | Amount: 200.00
+[2026-01-10 23:14:23] Insert Success for Order: ORD17680580631269
+[2026-01-10 23:14:24] API Response: {"tradeResult":"1","oriAmount":"200.00","tradeAmount":"200.00","mchId":"100567121","orderNo":"1000115368871","mchOrderNo":"ORD17680580631269","sign":"6c6dea43705cb5eb387c8b22e604f1c0","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-10 23:14:23","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768058063983l9tbp","respCode":"SUCCESS"}
+[2026-01-10 23:14:24] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768058063983l9tbp. Attempting Update...
+[2026-01-10 23:14:24] Update Query Executed Successfully.
+[2026-01-11 00:09:15] --- New Request Started ---
+[2026-01-11 00:09:15] Order Generated: ORD17680613558201 | Amount: 500.00
+[2026-01-11 00:09:15] Insert Success for Order: ORD17680613558201
+[2026-01-11 00:09:15] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-11 00:09:15] Failed to parse URL from response.
+[2026-01-11 00:09:24] --- New Request Started ---
+[2026-01-11 00:09:24] Order Generated: ORD17680613645026 | Amount: 500.00
+[2026-01-11 00:09:24] Insert Success for Order: ORD17680613645026
+[2026-01-11 00:09:25] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000115394495","mchOrderNo":"ORD17680613645026","sign":"e4dd2f889f0f57a37ea23c9e981bc8a3","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 00:09:24","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17680613651931yxhf","respCode":"SUCCESS"}
+[2026-01-11 00:09:25] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17680613651931yxhf. Attempting Update...
+[2026-01-11 00:09:25] Update Query Executed Successfully.
+[2026-01-11 00:11:05] --- New Request Started ---
+[2026-01-11 00:11:05] Order Generated: ORD17680614652303 | Amount: 500.00
+[2026-01-11 00:11:05] Insert Success for Order: ORD17680614652303
+[2026-01-11 00:11:05] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-11 00:11:05] Failed to parse URL from response.
+[2026-01-11 00:11:10] --- New Request Started ---
+[2026-01-11 00:11:10] Order Generated: ORD17680614708236 | Amount: 500.00
+[2026-01-11 00:11:10] Insert Success for Order: ORD17680614708236
+[2026-01-11 00:11:11] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000115395214","mchOrderNo":"ORD17680614708236","sign":"d6bba195a9fbcb8173d9f1e95d66b31c","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 00:11:10","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768061470940g5amg","respCode":"SUCCESS"}
+[2026-01-11 00:11:11] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768061470940g5amg. Attempting Update...
+[2026-01-11 00:11:11] Update Query Executed Successfully.
+[2026-01-11 00:12:37] --- New Request Started ---
+[2026-01-11 00:12:37] Order Generated: ORD17680615571866 | Amount: 300.00
+[2026-01-11 00:12:37] Insert Success for Order: ORD17680615571866
+[2026-01-11 00:12:38] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-11 00:12:38] Failed to parse URL from response.
+[2026-01-11 00:13:27] --- New Request Started ---
+[2026-01-11 00:13:27] Order Generated: ORD17680616072118 | Amount: 500.00
+[2026-01-11 00:13:27] Insert Success for Order: ORD17680616072118
+[2026-01-11 00:13:27] API Response: {"tradeMsg":"ORDER_REQUEST_FAILED","respCode":"FAIL"}
+[2026-01-11 00:13:27] Failed to parse URL from response.
+[2026-01-11 00:13:36] --- New Request Started ---
+[2026-01-11 00:13:36] Order Generated: ORD17680616166980 | Amount: 500.00
+[2026-01-11 00:13:36] Insert Success for Order: ORD17680616166980
+[2026-01-11 00:13:36] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000115396082","mchOrderNo":"ORD17680616166980","sign":"1c33a8b70c18510408eced6ad6b60d0b","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 00:13:36","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=176806161661857o8b","respCode":"SUCCESS"}
+[2026-01-11 00:13:36] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=176806161661857o8b. Attempting Update...
+[2026-01-11 00:13:36] Update Query Executed Successfully.
+[2026-01-11 10:36:45] --- New Request Started ---
+[2026-01-11 10:36:45] Order Generated: ORD17680990056023 | Amount: 200.00
+[2026-01-11 10:36:45] Insert Success for Order: ORD17680990056023
+[2026-01-11 10:36:45] API Response: {"tradeResult":"1","oriAmount":"200.00","tradeAmount":"200.00","mchId":"100567121","orderNo":"1000115474690","mchOrderNo":"ORD17680990056023","sign":"6713ca10c4a3be83c0f1a755a7c651c4","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 10:36:45","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17680990057323y60b","respCode":"SUCCESS"}
+[2026-01-11 10:36:45] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17680990057323y60b. Attempting Update...
+[2026-01-11 10:36:45] Update Query Executed Successfully.
+[2026-01-11 19:55:07] --- New Request Started ---
+[2026-01-11 19:55:07] Order Generated: ORD17681325072514 | Amount: 300.00
+[2026-01-11 19:55:07] Insert Success for Order: ORD17681325072514
+[2026-01-11 19:55:08] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115543303","mchOrderNo":"ORD17681325072514","sign":"646d83973c8b06e7ea560baeab782e2b","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 19:55:07","payInfo":"https://api.ffgo.net/upi/checkout/kbKY","respCode":"SUCCESS"}
+[2026-01-11 19:55:08] URL Found: https://api.ffgo.net/upi/checkout/kbKY. Attempting Update...
+[2026-01-11 19:55:08] Update Query Executed Successfully.
+[2026-01-11 20:30:41] --- New Request Started ---
+[2026-01-11 20:30:41] Order Generated: ORD17681346416236 | Amount: 100.00
+[2026-01-11 20:30:41] Insert Success for Order: ORD17681346416236
+[2026-01-11 20:30:42] API Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"100567121","orderNo":"1000115547893","mchOrderNo":"ORD17681346416236","sign":"41941dc80afd7d670787205f458c3135","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 20:30:41","payInfo":"https://api.ffgo.net/upi/checkout/kbYj","respCode":"SUCCESS"}
+[2026-01-11 20:30:42] URL Found: https://api.ffgo.net/upi/checkout/kbYj. Attempting Update...
+[2026-01-11 20:30:42] Update Query Executed Successfully.
+[2026-01-11 21:51:04] --- New Request Started ---
+[2026-01-11 21:51:04] Order Generated: ORD17681394641366 | Amount: 200.00
+[2026-01-11 21:51:04] Insert Success for Order: ORD17681394641366
+[2026-01-11 21:51:05] API Response: {"tradeResult":"1","oriAmount":"200.00","tradeAmount":"200.00","mchId":"100567121","orderNo":"1000115559627","mchOrderNo":"ORD17681394641366","sign":"da565f085bb8cc5bcab6b27f44373c83","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 21:51:04","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768139465249hlr5g","respCode":"SUCCESS"}
+[2026-01-11 21:51:05] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768139465249hlr5g. Attempting Update...
+[2026-01-11 21:51:05] Update Query Executed Successfully.
+[2026-01-11 21:54:51] --- New Request Started ---
+[2026-01-11 21:54:51] Order Generated: ORD17681396916759 | Amount: 300.00
+[2026-01-11 21:54:51] Insert Success for Order: ORD17681396916759
+[2026-01-11 21:54:53] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000115560331","mchOrderNo":"ORD17681396916759","sign":"16c0c09889afa4c8f922eec86ddd67b2","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-11 21:54:51","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768139693373obrbz","respCode":"SUCCESS"}
+[2026-01-11 21:54:53] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768139693373obrbz. Attempting Update...
+[2026-01-11 21:54:53] Update Query Executed Successfully.
+[2026-01-14 02:01:26] --- New Request Started ---
+[2026-01-14 02:01:26] Order Generated: ORD17683272861394 | Amount: 500.00
+[2026-01-14 02:01:26] Insert Success for Order: ORD17683272861394
+[2026-01-14 02:01:27] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000116000654","mchOrderNo":"ORD17683272861394","sign":"1a0b959af5f2ea562828c3970b4aca7e","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-14 02:01:26","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768327287645ytl0j","respCode":"SUCCESS"}
+[2026-01-14 02:01:27] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768327287645ytl0j. Attempting Update...
+[2026-01-14 02:01:27] Update Query Executed Successfully.
+[2026-01-16 11:48:03] --- New Request Started ---
+[2026-01-16 11:48:03] Order Generated: ORD17685352837779 | Amount: 500.00
+[2026-01-16 11:48:03] Insert Success for Order: ORD17685352837779
+[2026-01-16 11:48:04] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000116492565","mchOrderNo":"ORD17685352837779","sign":"2794c503bfa517348bc7baeeb99b415d","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-16 11:48:03","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768535284279u92hw","respCode":"SUCCESS"}
+[2026-01-16 11:48:04] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768535284279u92hw. Attempting Update...
+[2026-01-16 11:48:04] Update Query Executed Successfully.
+[2026-01-16 13:22:49] --- New Request Started ---
+[2026-01-16 13:22:49] Order Generated: ORD17685409698612 | Amount: 500.00
+[2026-01-16 13:22:49] Insert Success for Order: ORD17685409698612
+[2026-01-16 13:22:50] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000116502935","mchOrderNo":"ORD17685409698612","sign":"da06dc73b1525af65ed6b86cf9f6b5ff","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-16 13:22:49","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1768540970022akoiw","respCode":"SUCCESS"}
+[2026-01-16 13:22:50] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1768540970022akoiw. Attempting Update...
+[2026-01-16 13:22:50] Update Query Executed Successfully.
+[2026-01-18 14:50:30] --- New Request Started ---
+[2026-01-18 14:50:30] Order Generated: ORD17687190305376 | Amount: 10000.00
+[2026-01-18 14:50:30] Insert Success for Order: ORD17687190305376
+[2026-01-18 14:50:30] API Response: {"tradeResult":"1","oriAmount":"10000.00","tradeAmount":"10000.00","mchId":"100567121","orderNo":"1000116852719","mchOrderNo":"ORD17687190305376","sign":"c7cc05b4e394644e646bf73fdab260df","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-18 14:50:30","payInfo":"https://cashiernew2.blue-pay.vip/#/mobile?orderId=1768719030680jfylk","respCode":"SUCCESS"}
+[2026-01-18 14:50:30] URL Found: https://cashiernew2.blue-pay.vip/#/mobile?orderId=1768719030680jfylk. Attempting Update...
+[2026-01-18 14:50:30] Update Query Executed Successfully.
+[2026-01-18 16:59:05] --- New Request Started ---
+[2026-01-18 16:59:05] Order Generated: ORD17687267454371 | Amount: 300.00
+[2026-01-18 16:59:05] Insert Success for Order: ORD17687267454371
+[2026-01-18 16:59:06] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000116877089","mchOrderNo":"ORD17687267454371","sign":"44c10b4f8e0d9d7e159103db0740b2ad","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-18 16:59:05","payInfo":"https://cashiernew2.blue-pay.vip/#/mobile?orderId=1768726746158k6yy3","respCode":"SUCCESS"}
+[2026-01-18 16:59:06] URL Found: https://cashiernew2.blue-pay.vip/#/mobile?orderId=1768726746158k6yy3. Attempting Update...
+[2026-01-18 16:59:06] Update Query Executed Successfully.
+[2026-01-21 23:27:02] --- New Request Started ---
+[2026-01-21 23:27:02] Order Generated: ORD17690092225233 | Amount: 500.00
+[2026-01-21 23:27:02] Insert Success for Order: ORD17690092225233
+[2026-01-21 23:27:03] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000117492252","mchOrderNo":"ORD17690092225233","sign":"7dfabdb8ada849e18da4b11f7fb49109","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-21 23:27:02","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009223500qcgkm","respCode":"SUCCESS"}
+[2026-01-21 23:27:03] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009223500qcgkm. Attempting Update...
+[2026-01-21 23:27:03] Update Query Executed Successfully.
+[2026-01-21 23:27:42] --- New Request Started ---
+[2026-01-21 23:27:42] Order Generated: ORD17690092625613 | Amount: 500.00
+[2026-01-21 23:27:42] Insert Success for Order: ORD17690092625613
+[2026-01-21 23:27:42] API Response: {"tradeResult":"1","oriAmount":"500.00","tradeAmount":"500.00","mchId":"100567121","orderNo":"1000117492468","mchOrderNo":"ORD17690092625613","sign":"b20ff6a2ebcf61b93372f9d0b720a83a","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-21 23:27:42","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009262742pg4me","respCode":"SUCCESS"}
+[2026-01-21 23:27:42] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009262742pg4me. Attempting Update...
+[2026-01-21 23:27:42] Update Query Executed Successfully.
+[2026-01-21 23:34:44] --- New Request Started ---
+[2026-01-21 23:34:44] Order Generated: ORD17690096848577 | Amount: 300.00
+[2026-01-21 23:34:44] Insert Success for Order: ORD17690096848577
+[2026-01-21 23:34:47] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000117494645","mchOrderNo":"ORD17690096848577","sign":"9b9d464cd1edadb36198cbe1caaed6ad","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-21 23:34:44","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009685257zxgw0","respCode":"SUCCESS"}
+[2026-01-21 23:34:47] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769009685257zxgw0. Attempting Update...
+[2026-01-21 23:34:47] Update Query Executed Successfully.
+[2026-01-21 23:58:20] --- New Request Started ---
+[2026-01-21 23:58:20] Order Generated: ORD17690111002201 | Amount: 300.00
+[2026-01-21 23:58:20] Insert Success for Order: ORD17690111002201
+[2026-01-21 23:58:21] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000117500126","mchOrderNo":"ORD17690111002201","sign":"075b9103a276625fb8b985e4b32fe82d","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-21 23:58:20","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769011101337tfubd","respCode":"SUCCESS"}
+[2026-01-21 23:58:21] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769011101337tfubd. Attempting Update...
+[2026-01-21 23:58:21] Update Query Executed Successfully.
+[2026-01-22 01:45:42] --- New Request Started ---
+[2026-01-22 01:45:42] Order Generated: ORD17690175429346 | Amount: 300.00
+[2026-01-22 01:45:42] Insert Success for Order: ORD17690175429346
+[2026-01-22 01:45:42] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000117524470","mchOrderNo":"ORD17690175429346","sign":"50fa3716f40c2cde782a46d09501037f","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-22 01:45:42","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769017542875y9jc1","respCode":"SUCCESS"}
+[2026-01-22 01:45:42] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769017542875y9jc1. Attempting Update...
+[2026-01-22 01:45:42] Update Query Executed Successfully.
+[2026-01-28 12:19:03] --- New Request Started ---
+[2026-01-28 12:19:03] Order Generated: ORD17695739439331 | Amount: 300.00
+[2026-01-28 12:19:03] Insert Success for Order: ORD17695739439331
+[2026-01-28 12:19:04] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000118724764","mchOrderNo":"ORD17695739439331","sign":"8e5b157c2019d09007c43b1b9bd5c280","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-28 12:19:03","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769573944162ktacw","respCode":"SUCCESS"}
+[2026-01-28 12:19:04] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769573944162ktacw. Attempting Update...
+[2026-01-28 12:19:04] Update Query Executed Successfully.
+[2026-01-28 12:21:48] --- New Request Started ---
+[2026-01-28 12:21:48] Order Generated: ORD17695741084752 | Amount: 300.00
+[2026-01-28 12:21:48] Insert Success for Order: ORD17695741084752
+[2026-01-28 12:21:48] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000118725027","mchOrderNo":"ORD17695741084752","sign":"6b6ebdab9c6b5d78cd501fc5f15c0bc4","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-28 12:21:48","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769574108897250dg","respCode":"SUCCESS"}
+[2026-01-28 12:21:48] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769574108897250dg. Attempting Update...
+[2026-01-28 12:21:48] Update Query Executed Successfully.
+[2026-01-28 14:10:51] --- New Request Started ---
+[2026-01-28 14:10:51] Order Generated: ORD17695806519068 | Amount: 200.00
+[2026-01-28 14:10:51] Insert Success for Order: ORD17695806519068
+[2026-01-28 14:10:52] API Response: {"tradeResult":"1","oriAmount":"200.00","tradeAmount":"200.00","mchId":"100567121","orderNo":"1000118736247","mchOrderNo":"ORD17695806519068","sign":"359918480925c883f1e200219065c5f4","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-28 14:10:51","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=1769580652006qaczj","respCode":"SUCCESS"}
+[2026-01-28 14:10:52] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=1769580652006qaczj. Attempting Update...
+[2026-01-28 14:10:52] Update Query Executed Successfully.
+[2026-01-31 12:54:39] --- New Request Started ---
+[2026-01-31 12:54:39] Order Generated: ORD17698352794045 | Amount: 225.00
+[2026-01-31 12:54:39] Insert Success for Order: ORD17698352794045
+[2026-01-31 12:54:39] API Response: {"tradeResult":"1","oriAmount":"225.00","tradeAmount":"225.00","mchId":"100567121","orderNo":"1000119153136","mchOrderNo":"ORD17698352794045","sign":"fa1bd56bfe2d70a7e46c902dc434bcaa","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-31 12:54:39","payInfo":"https://cashiernew.blue-pay.vip/#/mobile?orderId=17698352794774xbb7","respCode":"SUCCESS"}
+[2026-01-31 12:54:39] URL Found: https://cashiernew.blue-pay.vip/#/mobile?orderId=17698352794774xbb7. Attempting Update...
+[2026-01-31 12:54:39] Update Query Executed Successfully.
+[2026-01-31 21:12:50] --- New Request Started ---
+[2026-01-31 21:12:50] Order Generated: ORD17698651706262 | Amount: 300.00
+[2026-01-31 21:12:50] Insert Success for Order: ORD17698651706262
+[2026-01-31 21:12:50] API Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"100567121","orderNo":"1000119211426","mchOrderNo":"ORD17698651706262","sign":"d8e9e83073d2e696f2378dce4da743c2","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-31 21:12:50","payInfo":"https://api.ffgo.net/upi/checkout/l2T5","respCode":"SUCCESS"}
+[2026-01-31 21:12:50] URL Found: https://api.ffgo.net/upi/checkout/l2T5. Attempting Update...
+[2026-01-31 21:12:50] Update Query Executed Successfully.

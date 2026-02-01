@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Withdraw - Trade Club Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #ffffff 0%, #fff5f0 25%, #ffe8dc 50%, #ffd4c8 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 107, 53, 0.2);
+      box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.15);
+    }
+    
+    .btn-gradient {
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa552 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+    }
+    
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-shine:after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.13);
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { left: -60%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+    
+    .slide-in {
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .glow {
+      animation: glow 2s infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px rgba(255, 107, 53, 0.5);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+      }
+    }
+    
+    .border-gradient {
+      border: 2px solid transparent;
+      background: linear-gradient(#ffffff, #ffffff) padding-box,
+                  linear-gradient(135deg, #ff6b35, #ff8c42) border-box;
+    }
+    
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+    
+    /* --- BOTTOM NAVIGATION BAR STYLE --- */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 2px solid rgba(255, 107, 53, 0.2);
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 0 10px;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: rgba(26, 26, 26, 0.6);
+        font-size: 11px;
+        font-weight: 500;
+        width: 60px;
+        padding: 5px 0;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .nav-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+        transition: all 0.3s ease;
+    }
+
+    /* ACTIVE STATE (Orange Highlight) */
+    .nav-item.active {
+        color: #ff6b35;
+        transform: translateY(-5px);
+        background: rgba(255, 107, 53, 0.15);
+    }
+
+    .nav-item.active i {
+        color: #8b5cf6; /* Icon Purple */
+        text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+
+    /* Optional: Active hone par niche chota dot */
+    .nav-item.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background: #8b5cf6;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #8b5cf6;
+    }
+
+    /* Page content navigation ke piche na chupe isliye body me padding */
+    body {
+        padding-bottom: 90px; 
+    }
+    
+    /* Animated Background Elements */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    /* Floating Animation */
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Pulse Animation */
+    .pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    /* Status Colors */
+    .status-completed {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    
+    .status-pending {
+      background: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    
+    .status-failed {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen overflow-x-hidden">
+  <div id="particles-js" class="fixed inset-0 overflow-hidden pointer-events-none"></div>
+  
+  <div class="container mx-auto px-4 py-6 relative z-10">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center">
+        <button onclick="window.history.back()" class="text-gray-300 hover:text-white mr-4">
+          <i class="fas fa-arrow-left text-xl"></i>
+        </button>
+        <h1 class="text-2xl font-bold text-white">Withdraw Funds</h1>
+      </div>
+      <a href="withdraw.php" class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center hover:bg-blue-500/30 transition-colors">
+        <i class="fas fa-history text-blue-400"></i>
+      </a>
+    </div>
+    
+    <div class="glass-effect rounded-2xl p-6 mb-6 border-gradient hover-scale">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-gray-400 text-sm mb-1">Available Balance</p>
+          <h2 class="text-3xl font-bold text-white" id="currentBalance">₹0.00</h2>
+        </div>
+        <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center glow">
+          <i class="fas fa-rupee-sign text-blue-400 text-xl"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="glass-effect rounded-2xl p-4 mb-6 border-gradient hover-scale">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-gray-400 text-sm mb-1">KYC Status</p>
+          <h3 id="kycStatusText" class="text-lg font-semibold text-white">Checking...</h3>
+        </div>
+        <div id="kycStatusIcon" class="w-10 h-10 rounded-full flex items-center justify-center">
+          <i class="fas fa-spinner fa-spin text-gray-400"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="glass-effect rounded-2xl p-6 mb-6 border-gradient hover-scale">
+      <h3 class="text-lg font-semibold text-white mb-4">Withdrawal Details</h3>
+      
+      <div class="mb-6">
+        <label class="block text-gray-400 text-sm font-medium mb-2">Amount (₹)</label>
+        <div class="relative">
+          <input id="withdrawAmount" type="number" min="1" 
+                 class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                 placeholder="Enter amount" />
+          <div class="absolute right-4 top-3 text-gray-400">₹</div>
+        </div>
+        <p id="minMaxInfo" class="text-xs text-gray-400 mt-2">Min: ₹420 | Max: ₹10,000</p>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-gray-400 text-sm font-medium mb-2">Withdrawal Method</label>
+        <select id="withdrawMethod" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+          
+          <option value="bank">Bank Transfer</option>
+         
+        </select>
+      </div>
+      
+      <div id="withdrawDetails" class="mb-6"></div>
+      
+      <div class="flex items-center mb-6">
+        <input id="termsCheckbox" type="checkbox" class="w-4 h-4 text-blue-600 bg-white/5 border-white/10 rounded focus:ring-blue-500 focus:ring-2">
+        <label for="termsCheckbox" class="ml-2 text-sm text-gray-400">
+          I agree to the <a href="user-agreement.php" class="text-blue-400 hover:underline">terms and conditions</a>
+        </label>
+      </div>
+      
+      <button id="withdrawBtn" class="w-full btn-gradient text-white font-semibold py-3 rounded-xl text-lg btn-shine">
+   Withdrawal
+</button>
+
+    </div>
+    
+    <div id="lastWithdrawalInfo" class="glass-effect rounded-2xl p-4 mb-6 border-gradient hidden">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-gray-400 text-sm mb-1">Last Withdrawal</p>
+          <h3 id="lastWithdrawalAmount" class="text-lg font-semibold text-white">₹0.00</h3>
+          <p id="lastWithdrawalDate" class="text-xs text-gray-400">-</p>
+        </div>
+        <div class="text-right">
+          <span id="lastWithdrawalStatus" class="status-badge status-pending">Pending</span>
+          <p id="lastWithdrawalNote" class="text-xs mt-2 font-medium hidden"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="glass-effect rounded-2xl p-4 border-gradient hover-scale">
+      <div class="flex items-start">
+        <div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center mr-3">
+          <i class="fas fa-info-circle text-purple-400"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white mb-1">Withdrawal Policy</h3>
+          <p class="text-xs text-gray-400">
+            • 1 withdrawal per day allowed<br>
+            • Minimum withdrawal: ₹420<br>
+            • Processing time: 4 hours<br>
+            • KYC verification required
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="resultModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 hidden animate__animated animate__fadeIn">
+    <div class="glass-effect rounded-2xl shadow-2xl w-full max-w-md mx-4 border-gradient">
+      <div class="p-6 text-center">
+        <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-check-circle text-green-400 text-3xl"></i>
+        </div>
+        <h3 id="resultTitle" class="text-xl font-bold text-white mb-2">Withdrawal Request Submitted</h3>
+        <p id="resultAmount" class="text-gray-400 mb-4">Your withdrawal request of <span class="text-white font-medium">₹0.00</span> has been received.</p>
+        <p id="resultDetails" class="text-sm text-gray-400 mb-6">Processing time: 1-24 hours</p>
+        <button onclick="closeModal('resultModal')" class="w-full btn-gradient text-white px-6 py-3 rounded-xl font-semibold">
+          Continue
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="errorModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 hidden animate__animated animate__fadeIn">
+    <div class="glass-effect rounded-2xl shadow-2xl w-full max-w-md mx-4 border-gradient">
+      <div class="p-6 text-center">
+        <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-exclamation-circle text-red-400 text-3xl"></i>
+        </div>
+        <h3 id="errorTitle" class="text-xl font-bold text-white mb-2">Withdrawal Failed</h3>
+        <p id="errorMessage" class="text-gray-400 mb-6">An error occurred while processing your request.</p>
+        <button onclick="closeModal('errorModal')" class="w-full bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-semibold transition-colors">
+          Try Again
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bottom-nav">
+    <a href="index.php" class="nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    
+    <a href="kyc.html" class="nav-item">
+      <i class="fas fa-gamepad"></i>
+      <span>Kyc</span>
+    </a>
+    
+    <a href="wallet.php" class="nav-item active">
+      <i class="fas fa-wallet"></i>
+      <span>Wallet</span>
+    </a>
+    
+    <a href="refer.php" class="nav-item">
+      <i class="fas fa-gift"></i>
+      <span>Promos</span>
+    </a>
+    
+    <a href="main.php" class="nav-item">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize particles.js
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#3b82f6"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#3b82f6",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        }
+      }
+    });
+
+    // Global variables
+    let minAmount = 420;
+    let maxAmount = 10000;
+    let currentBalance = 0;
+    let lastWithdrawal = null;
+    let kycStatus = null;
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadUserData();
+      loadWithdrawalSettings();
+      loadLastWithdrawal();
+      checkKYCStatus();
+      
+      // Setup method selection
+      document.getElementById('withdrawMethod').addEventListener('change', function() {
+        updateWithdrawalDetails();
+      });
+      
+      // Initial setup
+      updateWithdrawalDetails();
+      
+      // Withdraw button click
+      document.getElementById('withdrawBtn').addEventListener('click', processWithdrawal);
+    });
+    
+    // Load user data
+    function loadUserData() {
+      fetch('api/user.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            currentBalance = parseFloat(data.user.balance) || 0;
+            document.getElementById('currentBalance').textContent = `₹${currentBalance.toFixed(2)}`;
+          }
+        })
+        .catch(error => {
+          console.error('Error loading user data:', error);
+        });
+    }
+    
+    // Load withdrawal settings
+    function loadWithdrawalSettings() {
+      fetch('api/settings.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            minAmount = parseFloat(data.settings.min_withdrawal) || 420;
+            maxAmount = parseFloat(data.settings.max_withdrawal) || 10000;
+            document.getElementById('minMaxInfo').textContent = `Min: ₹${minAmount} | Max: ₹${maxAmount}`;
+          }
+        })
+        .catch(error => {
+          console.error('Error loading settings:', error);
+        });
+    }
+    
+    // Check KYC status
+    function checkKYCStatus() {
+      fetch('api/kyc.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success && data.kyc) {
+            kycStatus = data.kyc.status;
+            updateKYCStatusDisplay();
+          }
+        })
+        .catch(error => {
+          console.error('Error checking KYC status:', error);
+        });
+    }
+    
+    // Update KYC status display
+    function updateKYCStatusDisplay() {
+      const kycText = document.getElementById('kycStatusText');
+      const kycIcon = document.getElementById('kycStatusIcon');
+      
+      if (kycStatus === 'approved') {
+        kycText.textContent = 'Verified';
+        kycText.className = 'text-lg font-semibold text-green-400';
+        kycIcon.innerHTML = '<i class="fas fa-check-circle text-green-400"></i>';
+        kycIcon.className = 'w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center';
+      } else if (kycStatus === 'pending') {
+        kycText.textContent = 'Pending Approval';
+        kycText.className = 'text-lg font-semibold text-yellow-400';
+        kycIcon.innerHTML = '<i class="fas fa-clock text-yellow-400"></i>';
+        kycIcon.className = 'w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center';
+      } else {
+        kycText.textContent = 'Not Verified';
+        kycText.className = 'text-lg font-semibold text-red-400';
+        kycIcon.innerHTML = '<i class="fas fa-times-circle text-red-400"></i>';
+        kycIcon.className = 'w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center';
+      }
+    }
+    
+    // Load last withdrawal
+    function loadLastWithdrawal() {
+      fetch('api/last_withdrawal.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success && data.withdrawal) {
+            lastWithdrawal = data.withdrawal;
+            updateLastWithdrawalDisplay();
+          }
+        })
+        .catch(error => {
+          console.error('Error loading last withdrawal:', error);
+        });
+    }
+    
+    // Update last withdrawal display
+    function updateLastWithdrawalDisplay() {
+      if (lastWithdrawal) {
+        document.getElementById('lastWithdrawalInfo').classList.remove('hidden');
+        document.getElementById('lastWithdrawalAmount').textContent = `₹${parseFloat(lastWithdrawal.amount).toFixed(2)}`;
+        
+        const date = new Date(lastWithdrawal.created_at);
+        document.getElementById('lastWithdrawalDate').textContent = date.toLocaleString();
+        
+        const statusBadge = document.getElementById('lastWithdrawalStatus');
+        statusBadge.textContent = lastWithdrawal.status.charAt(0).toUpperCase() + lastWithdrawal.status.slice(1);
+        
+        if (lastWithdrawal.status === 'completed') {
+          statusBadge.className = 'status-badge status-completed';
+        } else if (lastWithdrawal.status === 'pending') {
+          statusBadge.className = 'status-badge status-pending';
+        } else {
+          statusBadge.className = 'status-badge status-failed';
+        }
+
+        // --- NEW CODE: Admin Note Logic ---
+        const noteElement = document.getElementById('lastWithdrawalNote');
+        
+        if (lastWithdrawal.admin_notes && lastWithdrawal.admin_notes !== "") {
+            noteElement.textContent = "Reason: " + lastWithdrawal.admin_notes;
+            noteElement.classList.remove('hidden');
+            
+            // Color based on status (Red for rejected, Gray for others)
+            if (lastWithdrawal.status === 'rejected') {
+                noteElement.className = 'text-xs mt-2 text-red-400 font-medium animate__animated animate__pulse';
+            } else {
+                noteElement.className = 'text-xs mt-2 text-gray-400';
+            }
+        } else {
+            noteElement.classList.add('hidden');
+        }
+      }
+    }
+    
+    // Update withdrawal details based on method
+    function updateWithdrawalDetails() {
+      const method = document.getElementById('withdrawMethod').value;
+      const detailsDiv = document.getElementById('withdrawDetails');
+      
+      if (method === 'upi') {
+        detailsDiv.innerHTML = `
+          <div class="mb-4">
+            <label class="block text-gray-400 text-sm font-medium mb-2">UPI ID</label>
+            <input type="text" id="upiId" 
+                   class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                   placeholder="yourname@upi" />
+          </div>
+        `;
+      } else if (method === 'bank') {
+        detailsDiv.innerHTML = `
+          <div class="space-y-4">
+            <div>
+              <label class="block text-gray-400 text-sm font-medium mb-2">Account Holder Name</label>
+              <input type="text" id="accountName" 
+                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                     placeholder="John Doe" />
+            </div>
+            <div>
+              <label class="block text-gray-400 text-sm font-medium mb-2">Account Number</label>
+              <input type="text" id="accountNumber" 
+                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                     placeholder="1234567890" />
+            </div>
+            <div>
+              <label class="block text-gray-400 text-sm font-medium mb-2">IFSC Code</label>
+              <input type="text" id="ifscCode" 
+                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                     placeholder="ABCD0123456" />
+            </div>
+          </div>
+        `;
+      } else if (method === 'paytm') {
+        detailsDiv.innerHTML = `
+          <div class="mb-4">
+            <label class="block text-gray-400 text-sm font-medium mb-2">Paytm Mobile Number</label>
+            <input type="text" id="paytmNumber" 
+                   class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                   placeholder="9876543210" />
+          </div>
+        `;
+      }
+    }
+    
+    // Process withdrawal
+    function processWithdrawal() {
+      // Validate inputs
+      const amount = parseFloat(document.getElementById('withdrawAmount').value);
+      
+      if (!amount || isNaN(amount)) {
+        showError('Invalid Amount', 'Please enter a valid withdrawal amount');
+        return;
+      }
+      
+      if (amount < minAmount || amount > maxAmount) {
+        showError('Invalid Amount', `Please enter an amount between ₹${minAmount} and ₹${maxAmount}`);
+        return;
+      }
+      
+      if (amount > currentBalance) {
+        showError('Insufficient Balance', 'You don\'t have enough balance for this withdrawal');
+        return;
+      }
+      
+      if (!document.getElementById('termsCheckbox').checked) {
+        showError('Terms Not Accepted', 'Please agree to the terms and conditions');
+        return;
+      }
+      
+      // Check KYC status
+      if (kycStatus !== 'approved') {
+        showError('KYC Required', 'Please complete KYC verification before withdrawing');
+        return;
+      }
+      
+      // Check if already withdrew today
+      if (lastWithdrawal) {
+        const lastWithdrawalDate = new Date(lastWithdrawal.created_at);
+        const today = new Date();
+        
+        if (lastWithdrawalDate.toDateString() === today.toDateString() && lastWithdrawal.status !== 'rejected') {
+          showError('Withdrawal Limit', 'You can only make 1 withdrawal per day');
+          return;
+        }
+      }
+      
+      // Get payment details based on method
+      const method = document.getElementById('withdrawMethod').value;
+      let details = {};
+      
+      if (method === 'upi') {
+        const upiId = document.getElementById('upiId').value.trim();
+        if (!upiId || !upiId.includes('@')) {
+          showError('Invalid UPI ID', 'Please enter a valid UPI ID (e.g., name@upi)');
+          return;
+        }
+        details = { upi_id: upiId };
+      } 
+      else if (method === 'bank') {
+        const accountName = document.getElementById('accountName').value.trim();
+        const accountNumber = document.getElementById('accountNumber').value.trim();
+        const ifscCode = document.getElementById('ifscCode').value.trim();
+        
+        if (!accountName || !accountNumber || !ifscCode) {
+          showError('Invalid Details', 'Please fill all bank details');
+          return;
+        }
+        
+        if (accountNumber.length < 9 || accountNumber.length > 18) {
+          showError('Invalid Account', 'Please enter a valid account number');
+          return;
+        }
+        
+        if (ifscCode.length !== 11) {
+          showError('Invalid IFSC', 'IFSC code must be 11 characters');
+          return;
+        }
+        
+        details = {
+          account_name: accountName,
+          account_number: accountNumber,
+          ifsc_code: ifscCode
+        };
+      }
+      else if (method === 'paytm') {
+        const paytmNumber = document.getElementById('paytmNumber').value.trim();
+        
+        if (!paytmNumber || paytmNumber.length !== 10 || !/^\d+$/.test(paytmNumber)) {
+          showError('Invalid Number', 'Please enter a valid 10-digit Paytm number');
+          return;
+        }
+        
+        details = { paytm_number: paytmNumber };
+      }
+      
+      // Submit withdrawal request
+      fetch('api/withdraw.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          amount: amount,
+          method: method,
+          details: details
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Show success
+          document.getElementById('resultAmount').innerHTML = `Your withdrawal request of <span class="text-white font-medium">₹${amount.toFixed(2)}</span> has been received.`;
+          document.getElementById('resultModal').classList.remove('hidden');
+          
+          // Update balance
+          currentBalance -= amount;
+          document.getElementById('currentBalance').textContent = `₹${currentBalance.toFixed(2)}`;
+          
+          // Update last withdrawal
+          lastWithdrawal = data.withdrawal;
+          updateLastWithdrawalDisplay();
+        } else {
+          showError('Withdrawal Failed', data.message || 'Failed to process withdrawal');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        showError('Network Error', 'Failed to connect to server. Please try again.');
+      });
+    }
+    
+    // Show error modal
+    function showError(title, message) {
+      document.getElementById('errorTitle').textContent = title;
+      document.getElementById('errorMessage').textContent = message;
+      document.getElementById('errorModal').classList.remove('hidden');
+    }
+    
+    // Close modal
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      
+      if (modalId === 'resultModal') {
+        // Redirect or refresh after successful withdrawal
+        window.location.href = 'index.php';
+      }
+    }
+  </script>
+</body>
+</html>

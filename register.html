@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Trade Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    * { font-family: 'Poppins', sans-serif; }
+    
+    .gradient-bg { background: linear-gradient(135deg, #ffffff 0%, #fff5f0 25%, #ffe8dc 50%, #ffd4c8 100%); overflow: hidden; position: relative; }
+    .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 2px solid rgba(255, 107, 53, 0.2); box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3); }
+    .btn-gradient { background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa552 100%); transition: 0.3s; }
+    .btn-gradient:active { transform: scale(0.98); }
+    .btn-gradient:hover { box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5); }
+    .input-box { width: 100%; padding: 14px 15px; padding-right: 40px; background: rgba(255,255,255,0.8); border: 2px solid rgba(255, 107, 53, 0.2); border-radius: 12px; color: #1a1a1a; outline: none; transition: 0.3s; }
+    .input-box:focus { border-color: #ff6b35; background: rgba(255,255,255,1); box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2); }
+    .input-icon { position: absolute; right: 15px; top: 15px; color: #ff8c42; }
+    
+    /* Recommended Referral Style */
+    .input-box.recommended {
+        border-color: #10b981 !important;
+        background: rgba(16, 185, 129, 0.1) !important;
+        color: #10b981 !important;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+
+  <div class="glass-effect rounded-3xl p-8 w-full max-w-sm relative z-10 animate__animated animate__fadeIn">
+    
+    <div class="text-center mb-8">
+      <img src="images/REG.png" class="w-20 h-20 rounded-2xl mx-auto mb-4 shadow-lg border border-white/10">
+      <h1 class="text-3xl font-bold mb-1" style="background: linear-gradient(135deg, #ff6b35, #ff8c42, #ffa552); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Trade Club</h1>
+      <p class="text-sm" style="color: #666; font-weight: 500;">Create New Account</p>
+    </div>
+
+    <div id="loginForm" class="space-y-5 hidden">
+      <h2 class="text-xl font-semibold text-center mb-2" style="color: #ff6b35;">Login</h2>
+      <div class="relative"><input type="text" id="loginUser" placeholder="Phone or Username" class="input-box"><div class="input-icon">👤</div></div>
+      <div class="relative"><input type="password" id="loginPass" placeholder="Password" class="input-box"><div class="input-icon">🔒</div></div>
+      <button onclick="login()" class="w-full btn-gradient text-white font-bold py-4 rounded-xl shadow-lg mt-2">LOGIN</button>
+      <p class="text-center text-sm mt-4" style="color: #666;">New here? <button onclick="showRegister()" class="font-bold hover:underline" style="color: #ff6b35;">Create Account</button></p>
+    </div>
+
+    <div id="registerForm" class="space-y-5">
+      <h2 class="text-xl font-semibold text-center mb-2" style="color: #ff6b35;">Create Account</h2>
+      <div class="relative"><input type="text" id="regUser" placeholder="Username" class="input-box"><div class="input-icon">👤</div></div>
+      <div class="relative"><input type="number" id="regPhone" placeholder="Mobile Number" class="input-box"><div class="input-icon">📱</div></div>
+      <div class="relative"><input type="password" id="regPass" placeholder="Password" class="input-box"><div class="input-icon">🔒</div></div>
+      
+      <div class="relative">
+        <input type="text" id="referralCode" placeholder="Referral Code (Get Bonus)" class="input-box">
+        <div class="input-icon" id="refIcon">🎁</div>
+      </div>
+
+      <button onclick="register()" class="w-full btn-gradient text-white font-bold py-4 rounded-xl shadow-lg mt-2">REGISTER</button>
+      <p class="text-center text-sm mt-4" style="color: #666;">Have an account? <button onclick="showLogin()" class="font-bold hover:underline" style="color: #ff6b35;">Login</button></p>
+    </div>
+
+    <div id="msgBox" class="hidden mt-4 p-3 rounded-lg text-center text-sm font-bold animate__animated animate__fadeInUp"></div>
+
+  </div>
+
+  <script>
+    // Toggle Forms
+    function showRegister() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.remove('hidden');
+        document.getElementById('registerForm').classList.add('animate__fadeIn');
+    }
+    function showLogin() {
+        document.getElementById('registerForm').classList.add('hidden');
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('loginForm').classList.add('animate__fadeIn');
+    }
+
+    // Message Handler
+    function showMessage(msg, isError) {
+        const box = document.getElementById('msgBox');
+        box.textContent = msg;
+        box.className = `mt-4 p-3 rounded-lg text-center text-sm font-bold animate__animated animate__fadeInUp ${isError ? 'bg-red-500/20 text-red-200 border border-red-500/50' : 'bg-green-500/20 text-green-200 border border-green-500/50'}`;
+        box.classList.remove('hidden');
+        setTimeout(() => box.classList.add('hidden'), 3000);
+    }
+
+    // API Functions
+    async function login() {
+        const username = document.getElementById('loginUser').value;
+        const password = document.getElementById('loginPass').value;
+        if(!username || !password) return showMessage('Please fill all fields', true);
+        const btn = document.querySelector('#loginForm button'); btn.innerText = 'Checking...';
+        try {
+            const req = await fetch('api/login.php', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({username, password}) });
+            const res = await req.json();
+            if(res.success) { showMessage('Login Success!', false); setTimeout(() => location.href = 'index.php', 1000); } 
+            else { showMessage(res.error, true); btn.innerText = 'LOGIN'; }
+        } catch(e) { showMessage('Server Error', true); btn.innerText = 'LOGIN'; }
+    }
+
+    async function register() {
+        const username = document.getElementById('regUser').value;
+        const phone = document.getElementById('regPhone').value;
+        const password = document.getElementById('regPass').value;
+        const referral_code = document.getElementById('referralCode').value;
+        if(!username || !phone || !password) return showMessage('Please fill all fields', true);
+        const btn = document.querySelector('#registerForm button'); btn.innerText = 'Creating Account...';
+        try {
+            const req = await fetch('api/register.php', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({username, phone, password, referral_code}) });
+            const res = await req.json();
+            if(res.success) { showMessage('Account Created!', false); setTimeout(() => location.href = 'index.php', 1000); } 
+            else { showMessage(res.error, true); btn.innerText = 'REGISTER'; }
+        } catch(e) { showMessage('Server Error', true); btn.innerText = 'REGISTER'; }
+    }
+
+    // Auto Logic for Register Page
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Force Show Register Form
+        showRegister();
+        
+        // 2. Check for Referral Code
+        const urlParams = new URLSearchParams(window.location.search);
+        const refCode = urlParams.get('ref');
+        
+        if (refCode) {
+            const refInput = document.getElementById('referralCode');
+            const refIcon = document.getElementById('refIcon');
+            
+            // Auto Fill
+            refInput.value = refCode;
+            
+            // Make it look "Recommended" / Verified
+            refInput.readOnly = true; // Lock it
+            refInput.classList.add('recommended'); // Add Green Style
+            refIcon.innerHTML = '✅'; // Change Icon to Checkmark
+            
+            showMessage('Referral Bonus Applied!', false);
+        }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Trade Club - Enter the Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rajdhani:wght@600;700&display=swap');
+
+        /* --- CORE SETTINGS --- */
+        :root {
+            --primary: #ff6b35;
+            --accent: #ff8c42;
+            --glass: rgba(255, 255, 255, 0.95);
+            --border: rgba(255, 107, 53, 0.2);
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f0 25%, #ffe8dc 50%, #ffd4c8 100%);
+            min-height: 100dvh;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            touch-action: manipulation;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animatio2px solid var(--border);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px 24px;
+            box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.3), 0 0 0 1px rgba(255, 107, 53, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Top Glow Line */
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff6b35, #ff8c42
+            max-width: 400px;
+            padding: 30px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }135deg, #ff6b35, #ff8c42, #ffa552);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+        }
+
+        /* --- TYPOGRAPHY --- */
+        .game-title {
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- INPUT FIELDS --- */
+        .input-group {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .input-field {255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            padding: 14px 16px 14px 45px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff8c42;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-field:focus + .input-icon {
+            color: #ff6b35
+        .input-field:focus + .input-icon {
+            color: #8b5cf6;
+        }
+
+        /* Verified Referral Input */
+        .input-field.verified {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+            color: #34d399;
+            font-weight: 600;
+        }
+        .input-field.verified + .input-icon {
+            color: #10b981;
+        }
+
+        /* --- BUTTONS --- */ff6b35 0%, #ff8c42 50%, #ffa552 100%);
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 10px rgba(255, 107, 53
+            transform: scale(0.98);
+            box-shadow: 0 2px255, 107, 53, 0.1);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+            border: 1px solid rgba(255, 107, 53, 0.2
+        
+        .tab-btn.active {
+            background: #1e293b;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- TOAST (POPUP) SETTINGS --- */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            text-align: center;
+            border-radius: 50px;
+            padding: 12px 20px;
+            position: fixed;
+            z-index: 999; /* Higher z-index */
+            left: 50%;
+            top: 20px; /* Moved to TOP */
+            transform: translateX(-50%);
+            font-size: 13px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        /* Updated Animation for TOP slide */
+        #toast.show { visibility: visible; animation: fadeinTop 0.5s, fadeoutTop 0.5s 2.5s; }
+        
+        @keyframes fadeinTop { from {top: -50px; opacity: 0;} to {top: 20px; opacity: 1;} }
+        @keyframes fadeoutTop { from {top: 20px; opacity: 1;} to {top: -50px; opacity: 0;} }
+
+    </style>
+</head>
+<body>
+
+    <div class="auth-card animate__animated animate__fadeInUp">
+        
+        <div class="text-center mb-6">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-tr from-orange-500 to-orange-600 rounded-2xl p-0.5 shadow-2xl mb-3 rotate-3 hover:rotate-0 transition-all duration-500">
+                <img src="images/REG.png" alt="Logo" class="w-full h-full object-cover rounded-xl bg-white">
+            </div>
+            <h1 class="text-3xl font-bold game-title">Trade Club</h1>
+            <p class="text-xs tracking-wide mt-1" style="color: #ff6b35; font-weight: 600;">INVEST • GROW • EARN</p>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Login</button>
+            <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <div id="loginForm">
+            <div class="input-group">
+                <input type="text" id="loginUser" class="input-field" placeholder="Username or Mobile">
+                <i class="fas fa-user input-icon"></i>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="loginPass" class="input-field" placeholder="Password">
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+
+            <div class="flex justify-between items-center text-xs mb-6 px-1" style="color: #666;">
+                <label class="flex items-center gap-2 cursor-pointer hover:text-orange-600 transition">
+                    <input type="checkbox" class="rounded border-orange-300 accent-orange-500"> 
+                    Remember me
+                </label>
+                <a href="#" class="hover:text-orange-600 transition">Forgot Password?</a>
+            </div>
+
+            <button onclick="login()" class="btn-primary" id="btnLogin">LOGIN NOW</button>
+        </div>
+
+        <div id="registerForm" class="hidden">
+            <div class="input-group">
+                <input type="text" id="regUser" class="input-field" placeholder="Create Username">
+                <i class="fas fa-user-tag input-icon"></i>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="regPhone" class="input-field" placeholder="Mobile Number (10 Digits)" 
+                       oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
+                <i class="fas fa-mobile-alt input-icon"></i>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="regPass" class="input-field" placeholder="Password (6+ chars)">
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+
+            <div class="input-group relative">
+                <input type="text" id="referralCode" class="input-field" placeholder="Referral Code (Required)">
+                <i class="fas fa-gift input-icon" id="refIcon"></i>
+                <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-green-400 font-bold hidden" id="bonusTag">BONUS APPLIED</div>
+            </div>
+
+            <div class="flex items-start gap-2 mb-6 px-1">
+                <input type="checkbox" id="terms" class="mt-1 rounded bg-white/10 border-white/20 accent-indigo-500">
+                <p class="text-xs text-gray-400 leading-tight">
+                    I agree to the <a href="user-agreement.php" class="text-indigo-400 underline">Terms</a> & <a href="user-agreement.php" class="text-indigo-400 underline">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <button onclick="register()" class="btn-primary" id="btnReg">CREATE ACCOUNT</button>
+        </div>
+
+    </div>
+
+    <div id="toast">
+        <i class="fas fa-check-circle text-green-400"></i>
+        <span id="toastMsg">Welcome!</span>
+    </div>
+
+    <script>
+        // --- UI LOGIC ---
+        function switchTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const regForm = document.getElementById('registerForm');
+            const tabLogin = document.getElementById('tabLogin');
+            const tabReg = document.getElementById('tabRegister');
+
+            if (tab === 'login') {
+                loginForm.classList.remove('hidden');
+                loginForm.classList.add('animate__animated', 'animate__fadeIn');
+                regForm.classList.add('hidden');
+                
+                tabLogin.classList.add('active');
+                tabReg.classList.remove('active');
+            } else {
+                regForm.classList.remove('hidden');
+                regForm.classList.add('animate__animated', 'animate__fadeIn');
+                loginForm.classList.add('hidden');
+                
+                tabReg.classList.add('active');
+                tabLogin.classList.remove('active');
+            }
+        }
+
+        function showToast(msg, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msgSpan = document.getElementById('toastMsg');
+            const icon = toast.querySelector('i');
+
+            msgSpan.innerText = msg;
+            
+            if(type === 'error') {
+                icon.className = 'fas fa-times-circle text-red-400';
+                toast.style.border = '1px solid rgba(248, 113, 113, 0.3)';
+            } else {
+                icon.className = 'fas fa-check-circle text-green-400';
+                toast.style.border = '1px solid rgba(52, 211, 153, 0.3)';
+            }
+
+            toast.className = 'show';
+            setTimeout(() => { toast.className = ''; }, 3000);
+        }
+
+        // --- API CALLS ---
+        async function login() {
+            const btn = document.getElementById('btnLogin');
+            const username = document.getElementById('loginUser').value;
+            const password = document.getElementById('loginPass').value;
+
+            if(!username || !password) return showToast("Please fill all fields", "error");
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking...';
+            
+            try {
+                const req = await fetch('api/login.php', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username, password})
+                });
+                const res = await req.json();
+
+                if(res.success) {
+                    showToast("Login Successful!");
+                    setTimeout(() => window.location.href = 'index.php', 1000);
+                } else {
+                    showToast(res.error || "Invalid Credentials", "error");
+                    btn.innerHTML = 'LOGIN NOW';
+                }
+            } catch(e) {
+                showToast("Server Connection Failed", "error");
+                btn.innerHTML = 'LOGIN NOW';
+            }
+        }
+
+        async function register() {
+            const btn = document.getElementById('btnReg');
+            const username = document.getElementById('regUser').value;
+            const phone = document.getElementById('regPhone').value;
+            const password = document.getElementById('regPass').value;
+            const referral_code = document.getElementById('referralCode').value;
+            const terms = document.getElementById('terms').checked;
+
+            if(!username || !phone || !password) return showToast("All fields are required", "error");
+            
+            // --- CHECK 10 DIGIT MOBILE NUMBER ---
+            if(phone.length !== 10) {
+                return showToast("Mobile Number must be 10 digits", "error");
+            }
+
+            if(!terms) return showToast("Please agree to Terms", "error");
+            
+            // --- REFERRAL COMPULSORY CHECK ---
+            if(!referral_code || referral_code.trim() === '') {
+                return showToast("Referral Code is Compulsory!", "error");
+            }
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
+
+            try {
+                const req = await fetch('api/register.php', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username, phone, password, referral_code})
+                });
+                const res = await req.json();
+
+                if(res.success) {
+                    showToast("Account Created! Redirecting...");
+                    setTimeout(() => window.location.href = 'index.php', 1000);
+                } else {
+                    showToast(res.error || "Registration Failed", "error");
+                    btn.innerHTML = 'CREATE ACCOUNT';
+                }
+            } catch(e) {
+                showToast("Server Connection Failed", "error");
+                btn.innerHTML = 'CREATE ACCOUNT';
+            }
+        }
+
+        // --- AUTO RUN ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const refCode = urlParams.get('ref');
+
+            if (refCode) {
+                switchTab('register'); // Force Open Register if referral link used
+                
+                const refInput = document.getElementById('referralCode');
+                const refIcon = document.getElementById('refIcon');
+                const bonusTag = document.getElementById('bonusTag');
+
+                refInput.value = refCode;
+                refInput.readOnly = true;
+                refInput.classList.add('verified');
+                
+                refIcon.className = 'fas fa-check-circle input-icon !text-green-400';
+                bonusTag.classList.remove('hidden');
+
+                showToast("Referral Code Applied!", "success");
+            } else {
+                switchTab('login'); // Default View: LOGIN
+            }
+        });
+    </script>
+
+</body>
+</html>

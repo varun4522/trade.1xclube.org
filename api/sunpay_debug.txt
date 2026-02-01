@@ -1,0 +1,20 @@
+[2025-12-24 17:24:50] Received Data: {"tradeResult":"1","oriAmount":"101.00","amount":"101.00","mchId":"202111011","orderNo":"385816498","mchOrderNo":"202512241723501353","sign":"937f6529614ee8d2bcbd0e085c12b210","signType":"MD5","orderDate":"2025-12-24 17:23:51"}
+[2025-12-24 17:24:50] Sign Check -> Calc: cff78a88070ed4bd8af72ec04a6b982c | Recv: 937f6529614ee8d2bcbd0e085c12b210
+[2025-12-24 17:24:50] Retry Sign without excluding tradeMsg...
+[2025-12-24 17:24:50] WARNING: Signature Mismatch! But processing anyway to fix stuck payment.
+[2025-12-24 17:24:50] SUCCESS: Payment Approved for Order 202512241723501353
+[2025-12-24 17:25:02] Received Data: {"tradeResult":"1","oriAmount":"101.00","amount":"101.00","mchId":"202111011","orderNo":"385816498","mchOrderNo":"202512241723501353","sign":"937f6529614ee8d2bcbd0e085c12b210","signType":"MD5","orderDate":"2025-12-24 17:23:51"}
+[2025-12-24 17:25:02] Sign Check -> Calc: cff78a88070ed4bd8af72ec04a6b982c | Recv: 937f6529614ee8d2bcbd0e085c12b210
+[2025-12-24 17:25:02] Retry Sign without excluding tradeMsg...
+[2025-12-24 17:25:02] WARNING: Signature Mismatch! But processing anyway to fix stuck payment.
+[2025-12-24 17:25:02] Order already approved
+[2026-01-03 23:00:26] Received Data: {"tradeResult":"1","oriAmount":"100.00","amount":"100.00","mchId":"202111011","orderNo":"386986204","mchOrderNo":"202601032259489725","sign":"adaf33fcee2cf384786d12d9422da889","signType":"MD5","orderDate":"2026-01-03 22:59:48"}
+[2026-01-03 23:00:26] Sign Check -> Calc: 6c52d593e5fa76a986ba72222d6bbb0e | Recv: adaf33fcee2cf384786d12d9422da889
+[2026-01-03 23:00:26] Retry Sign without excluding tradeMsg...
+[2026-01-03 23:00:26] WARNING: Signature Mismatch! But processing anyway to fix stuck payment.
+[2026-01-03 23:00:26] SUCCESS: Payment Approved for Order 202601032259489725
+[2026-01-03 23:00:52] Received Data: {"tradeResult":"1","oriAmount":"100.00","amount":"100.00","mchId":"202111011","orderNo":"386986204","mchOrderNo":"202601032259489725","sign":"adaf33fcee2cf384786d12d9422da889","signType":"MD5","orderDate":"2026-01-03 22:59:48"}
+[2026-01-03 23:00:52] Sign Check -> Calc: 6c52d593e5fa76a986ba72222d6bbb0e | Recv: adaf33fcee2cf384786d12d9422da889
+[2026-01-03 23:00:52] Retry Sign without excluding tradeMsg...
+[2026-01-03 23:00:52] WARNING: Signature Mismatch! But processing anyway to fix stuck payment.
+[2026-01-03 23:00:52] Order already approved

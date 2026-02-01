@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Deposit History</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    * { font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
+    
+    body {
+        background: linear-gradient(135deg, #ffffff 0%, #fff5f0 25%, #ffe8dc 50%, #ffd4c8 100%);
+        color: #1a1a1a;
+        padding-bottom: 90px;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .bg-mesh {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at 50% -20%, rgba(255, 107, 53, 0.1), transparent);
+        z-index: -1;
+    }
+
+    /* Header */
+    .glass-header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 2px solid rgba(255, 107, 53, 0.2);
+        position: sticky; top: 0; z-index: 50;
+    }
+
+    /* Filter Tabs */
+    .filter-container {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255, 107, 53, 0.2);
+    }
+    
+    .tab-btn {
+        transition: all 0.2s ease;
+        border-bottom: 2px solid transparent;
+    }
+    
+    /* Active States Colors */
+    .tab-btn.active-all { color: #ff6b35; background: rgba(255, 107, 53, 0.15); border-bottom-color: #ff6b35; }
+    .tab-btn.active-approved { color: #4ade80; background: rgba(74, 222, 128, 0.1); border-bottom-color: #4ade80; }
+    .tab-btn.active-pending { color: #facc15; background: rgba(250, 204, 21, 0.1); border-bottom-color: #facc15; }
+    .tab-btn.active-rejected { color: #f87171; background: rgba(248, 113, 113, 0.1); border-bottom-color: #f87171; }
+
+    /* Transaction Card */
+    .tx-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid rgba(255, 107, 53, 0.15);
+        backdrop-filter: blur(5px);
+        position: relative;
+        overflow: hidden;
+    }
+    .tx-card:active { transform: scale(0.99); background: rgba(255, 255, 255, 1); }
+
+    /* Left Status Bar */
+    .border-l-success { border-left: 3px solid #4ade80; }
+    .border-l-pending { border-left: 3px solid #facc15; }
+    .border-l-failed  { border-left: 3px solid #f87171; }
+
+    /* Bottom Nav */
+    .bottom-nav {
+        position: fixed; bottom: 0; left: 0; right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 2px solid rgba(255, 107, 53, 0.2);
+        display: flex; justify-content: space-around; padding: 12px 0 10px;
+        z-index: 1000; backdrop-filter: blur(10px);
+    }
+    .nav-item {
+        display: flex; flex-direction: column; align-items: center;
+        text-decoration: none; color: rgba(26, 26, 26, 0.6);
+        font-size: 11px; font-weight: 500; width: 60px; padding: 5px 0;
+        border-radius: 15px; transition: all 0.3s ease;
+    }
+    .nav-item i { font-size: 20px; margin-bottom: 4px; transition: all 0.3s ease; }
+    .nav-item.active { color: #ff6b35; transform: translateY(-5px); background: rgba(255, 107, 53, 0.15); }
+    .nav-item.active i { color: #ff6b35; text-shadow: 0 0 10px rgba(255, 107, 53, 0.5); }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh"></div>
+
+  <div class="glass-header px-4 py-4 flex items-center justify-between shadow-lg">
+    <div class="flex items-center gap-4">
+        <a href="deposit.php" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition active:scale-95">
+            <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+        <h1 class="text-lg font-bold tracking-wide">Deposit History</h1>
+    </div>
+    <button onclick="refreshData()" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 hover:text-white transition active:rotate-180 duration-500">
+        <i class="fas fa-sync-alt text-sm"></i>
+    </button>
+  </div>
+
+  <div class="max-w-md mx-auto p-4">
+    
+    <div class="filter-container grid grid-cols-4 p-1 rounded-xl mb-6">
+        <button onclick="filterStatus('')" class="tab-btn py-2.5 text-[11px] font-medium rounded-lg text-gray-400 active-all" id="btn-all">All</button>
+        <button onclick="filterStatus('approved')" class="tab-btn py-2.5 text-[11px] font-medium rounded-lg text-gray-400" id="btn-approved">Success</button>
+        <button onclick="filterStatus('pending')" class="tab-btn py-2.5 text-[11px] font-medium rounded-lg text-gray-400" id="btn-pending">Pending</button>
+        <button onclick="filterStatus('rejected')" class="tab-btn py-2.5 text-[11px] font-medium rounded-lg text-gray-400" id="btn-rejected">Failed</button>
+    </div>
+
+    <div id="loading" class="text-center py-20">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-3"></div>
+        <p class="text-xs text-gray-500 tracking-wider">SYNCING DATA...</p>
+    </div>
+
+    <div id="empty" class="hidden text-center py-16 animate__animated animate__fadeIn">
+        <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 border border-white/5">
+            <i class="fas fa-filter text-2xl text-gray-500"></i>
+        </div>
+        <p class="text-gray-300 font-medium" id="emptyText">No deposits found</p>
+    </div>
+
+    <div id="list" class="space-y-3 hidden animate__animated animate__fadeIn"></div>
+    
+    <div id="pagination" class="flex justify-center mt-8 hidden pb-4">
+        <button id="loadMoreBtn" class="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300 hover:bg-white/10 transition">Load More</button>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <a href="index.php" class="nav-item">
+      <i class="fas fa-home"></i><span>Home</span>
+    </a>
+    <a href="kyc.html" class="nav-item">
+      <i class="fas fa-gamepad"></i><span>Kyc</span>
+    </a>
+    <a href="wallet.php" class="nav-item active">
+      <i class="fas fa-wallet"></i><span>Wallet</span>
+    </a>
+    <a href="refer.php" class="nav-item">
+      <i class="fas fa-gift"></i><span>Promos</span>
+    </a>
+    <a href="main.php" class="nav-item">
+      <i class="fas fa-user"></i><span>Profile</span>
+    </a>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    let currentStatus = '';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set 'All' active by default
+        document.getElementById('btn-all').classList.add('active-all');
+        loadTransactions();
+        
+        document.getElementById('loadMoreBtn').addEventListener('click', () => {
+            currentPage++; loadTransactions(true);
+        });
+    });
+
+    function refreshData() {
+        currentPage = 1; loadTransactions(false);
+    }
+
+    function filterStatus(status) {
+        currentStatus = status; 
+        currentPage = 1;
+        
+        // UI Reset
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active-all', 'active-approved', 'active-pending', 'active-rejected');
+            btn.classList.add('text-gray-400'); 
+        });
+        
+        // Active Logic
+        let activeId = 'btn-all';
+        let activeClass = 'active-all';
+        
+        if (status === 'approved') { activeId = 'btn-approved'; activeClass = 'active-approved'; }
+        else if (status === 'pending') { activeId = 'btn-pending'; activeClass = 'active-pending'; }
+        else if (status === 'rejected') { activeId = 'btn-rejected'; activeClass = 'active-rejected'; }
+        
+        const activeBtn = document.getElementById(activeId);
+        activeBtn.classList.remove('text-gray-400');
+        activeBtn.classList.add(activeClass);
+
+        loadTransactions(false);
+    }
+
+    function loadTransactions(append = false) {
+        const loading = document.getElementById('loading');
+        const list = document.getElementById('list');
+        const empty = document.getElementById('empty');
+        const pagination = document.getElementById('pagination');
+        const emptyText = document.getElementById('emptyText');
+
+        if (!append) {
+            loading.classList.remove('hidden');
+            list.classList.add('hidden');
+            empty.classList.add('hidden');
+            pagination.classList.add('hidden');
+            list.innerHTML = '';
+        }
+
+        // Fetching Data
+        fetch(`api/transactions.php?page=${currentPage}&status=${currentStatus}&type=deposit`)
+            .then(r => r.json())
+            .then(data => {
+                loading.classList.add('hidden');
+                
+                if(data.success && data.transactions.length > 0) {
+                    
+                    let count = 0;
+
+                    data.transactions.forEach(tx => {
+                        // ============================================
+                        // STRICT CLIENT-SIDE FILTERING (THE FIX)
+                        // ============================================
+                        
+                        // 1. Only show Deposits
+                        if(tx.type !== 'deposit') return;
+
+                        // 2. Strict Status Filter (Agar API galat data bheje toh hum chupa denge)
+                        // Note: Database values are: 'approved', 'pending', 'rejected'
+                        if (currentStatus !== '') {
+                            if (currentStatus === 'approved' && tx.status !== 'approved' && tx.status !== 'completed') return;
+                            if (currentStatus === 'pending' && tx.status !== 'pending') return;
+                            if (currentStatus === 'rejected' && tx.status !== 'rejected' && tx.status !== 'failed') return;
+                        }
+
+                        count++;
+
+                        // UI Logic
+                        let borderClass = '', statusText = '', textClass = '', icon = '';
+
+                        if(tx.status === 'approved' || tx.status === 'completed') {
+                            borderClass = 'border-l-success'; statusText = 'Success'; textClass = 'text-green-400';
+                        } else if (tx.status === 'pending') {
+                            borderClass = 'border-l-pending'; statusText = 'Pending'; textClass = 'text-yellow-400';
+                        } else {
+                            borderClass = 'border-l-failed'; statusText = 'Failed'; textClass = 'text-red-400';
+                        }
+
+                        // Method Name Logic (Sunpay, Basepay, etc)
+                        let methodName = tx.deposit_method || tx.method || 'Unknown';
+                        // Capitalize first letter (e.g. basepay -> Basepay)
+                        methodName = methodName.charAt(0).toUpperCase() + methodName.slice(1);
+
+                        // Date Format: 27/12/2025
+                        const d = new Date(tx.created_at);
+                        const dateStr = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+                        const timeStr = d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+
+                        const displayId = tx.mch_order_no || tx.transaction_id || tx.id;
+
+                        const item = `
+                            <div class="tx-card p-4 rounded-xl flex items-center justify-between animate__animated animate__fadeInUp ${borderClass}">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                                        <i class="fas fa-arrow-down text-blue-400 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-sm font-bold text-white uppercase tracking-wide">Deposit</span>
+                                            <span class="text-[10px] ${textClass} bg-white/5 px-1.5 rounded border border-white/5">${statusText}</span>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium mt-0.5">
+                                            ${dateStr} <span class="opacity-50 mx-1">|</span> ${timeStr}
+                                        </div>
+                                        <div class="text-[10px] text-gray-600 font-mono mt-0.5 truncate w-32">${displayId}</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-base font-bold text-white">+₹${parseFloat(tx.amount).toFixed(2)}</div>
+                                    <div class="text-[10px] text-gray-500 mt-1">Via ${methodName}</div>
+                                </div>
+                            </div>
+                        `;
+                        list.insertAdjacentHTML('beforeend', item);
+                    });
+
+                    // If after filtering, no items left?
+                    if(count > 0) {
+                        list.classList.remove('hidden');
+                        if(data.pagination && data.pagination.has_next) pagination.classList.remove('hidden');
+                        else pagination.classList.add('hidden');
+                    } else {
+                        if(!append) {
+                            emptyText.innerText = currentStatus ? `No ${currentStatus} deposits` : "No deposits found";
+                            empty.classList.remove('hidden');
+                        }
+                    }
+
+                } else {
+                    if(!append) {
+                        emptyText.innerText = currentStatus ? `No ${currentStatus} deposits` : "No deposits found";
+                        empty.classList.remove('hidden');
+                    }
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                loading.classList.add('hidden');
+                if(!append) empty.classList.remove('hidden');
+            });
+    }
+  </script>
+</body>
+</html>

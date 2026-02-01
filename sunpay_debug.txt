@@ -1,0 +1,28 @@
+[2026-01-03 22:59:48] --- New SunPay Request Started ---
+[2026-01-03 22:59:48] Sending Request for Order: 202601032259489725
+[2026-01-03 22:59:48] Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"202111011","orderNo":"386986204","mchOrderNo":"202601032259489725","sign":"16801fd9841bbec058db21dbcb5adcd9","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 22:59:48","payInfo":"https://cash.bsdcashh.com/20260103202948702015259","respCode":"SUCCESS"}
+[2026-01-03 22:59:48] URL Saved Successfully: https://cash.bsdcashh.com/20260103202948702015259
+[2026-01-03 23:35:48] --- New SunPay Request Started ---
+[2026-01-03 23:35:48] Sending Request for Order: 202601032335487239
+[2026-01-03 23:35:49] Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"202111011","orderNo":"386988640","mchOrderNo":"202601032335487239","sign":"1fe14528b203958bc9ea20732b1b788f","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-03 23:35:48","payInfo":"https://cash.bsdcashh.com/20260103210548906025325","respCode":"SUCCESS"}
+[2026-01-03 23:35:49] URL Saved Successfully: https://cash.bsdcashh.com/20260103210548906025325
+[2026-01-05 17:00:11] --- New SunPay Request Started ---
+[2026-01-05 17:00:11] Sending Request for Order: 202601051700116695
+[2026-01-05 17:00:14] Response: {"tradeResult":"1","oriAmount":"50000.00","tradeAmount":"50000.00","mchId":"202111011","orderNo":"387158294","mchOrderNo":"202601051700116695","sign":"d030653e2beea26c34993cec247e1550","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-05 17:00:11","payInfo":"https://cash.bsdcashh.com/20260105143014570013940","respCode":"SUCCESS"}
+[2026-01-05 17:00:14] URL Saved Successfully: https://cash.bsdcashh.com/20260105143014570013940
+[2026-01-08 23:05:37] --- New SunPay Request Started ---
+[2026-01-08 23:05:37] Sending Request for Order: 202601082305372461
+[2026-01-08 23:05:40] Response: {"tradeResult":"1","oriAmount":"100.00","tradeAmount":"100.00","mchId":"202111011","orderNo":"387451974","mchOrderNo":"202601082305372461","sign":"80d4debe4e93cf6fd4e98a4a11e6a35d","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-08 23:05:37","payInfo":"https://cash.bsdcashh.com/20260108203540371032434","respCode":"SUCCESS"}
+[2026-01-08 23:05:40] URL Saved Successfully: https://cash.bsdcashh.com/20260108203540371032434
+[2026-01-08 23:12:40] --- New SunPay Request Started ---
+[2026-01-08 23:12:40] Sending Request for Order: 202601082312403097
+[2026-01-08 23:12:40] Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"202111011","orderNo":"387452539","mchOrderNo":"202601082312403097","sign":"fb345e0a2cc74b3fe582d33d84327b53","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-08 23:12:40","payInfo":"https://cash.bsdcashh.com/20260108204240785032453","respCode":"SUCCESS"}
+[2026-01-08 23:12:40] URL Saved Successfully: https://cash.bsdcashh.com/20260108204240785032453
+[2026-01-18 14:49:32] --- New SunPay Request Started ---
+[2026-01-18 14:49:32] Sending Request for Order: 202601181449323719
+[2026-01-18 14:49:36] Response: {"tradeResult":"1","oriAmount":"50000.00","tradeAmount":"50000.00","mchId":"202111011","orderNo":"388405303","mchOrderNo":"202601181449323719","sign":"328a06eeef17707b57d04dcb392bfe8b","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-18 14:49:32","payInfo":"https://cash.bsdcashh.com/20260118121936027011798","respCode":"SUCCESS"}
+[2026-01-18 14:49:36] URL Saved Successfully: https://cash.bsdcashh.com/20260118121936027011798
+[2026-01-21 23:58:03] --- New SunPay Request Started ---
+[2026-01-21 23:58:03] Sending Request for Order: 202601212358031114
+[2026-01-21 23:58:04] Response: {"tradeResult":"1","oriAmount":"300.00","tradeAmount":"300.00","mchId":"202111011","orderNo":"388666998","mchOrderNo":"202601212358031114","sign":"0209aa89be516b0544f41a96bbd92305","tradeMsg":"request success","signType":"MD5","orderDate":"2026-01-21 23:58:03","payInfo":"https://cash.bsdcashh.com/20260121212804691019411","respCode":"SUCCESS"}
+[2026-01-21 23:58:04] URL Saved Successfully: https://cash.bsdcashh.com/20260121212804691019411
