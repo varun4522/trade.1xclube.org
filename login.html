@@ -46,13 +46,29 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-            animatio2px solid var(--border);
-            border-radius: 24px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- AUTH CARD --- */
+        .auth-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--border);
+            border-radius: 28px;
             width: 100%;
-            max-width: 400px;
-            padding: 30px 24px;
-            box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.3), 0 0 0 1px rgba(255, 107, 53, 0.1);
+            max-width: 420px;
+            padding: 35px 28px;
+            box-shadow: 
+                0 25px 50px -12px rgba(255, 107, 53, 0.25), 
+                0 0 0 1px rgba(255, 107, 53, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -63,30 +79,16 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ff6b35, #ff8c42
-            max-width: 400px;
-            padding: 30px 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }135deg, #ff6b35, #ff8c42, #ffa552);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700
-        .auth-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff6b35, #ff8c42, #ffa552, transparent);
+            z-index: 2;
         }
 
         /* --- TYPOGRAPHY --- */
         .game-title {
             font-family: 'Rajdhani', sans-serif;
             letter-spacing: 1px;
-            background: linear-gradient(to right, #fff, #a5b4fc);
+            background: linear-gradient(135deg, #1a1a1a 0%, #ff6b35 50%, #ff8c42 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -97,54 +99,66 @@
             margin-bottom: 16px;
         }
 
-        .input-field {255, 255, 255, 0.8);
-            border: 2px solid rgba(255, 107, 53, 0.2);
-            border-radius: 12px;
-            padding: 14px 16px 14px 45px;
+        .input-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 107, 53, 0.15);
+            border-radius: 14px;
+            padding: 15px 16px 15px 48px;
             color: var(--text-primary);
             font-size: 14px;
+            font-weight: 500;
             outline: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .input-field:focus {
             border-color: #ff6b35;
             background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1), 0 4px 12px rgba(255, 107, 53, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .input-field::placeholder {
+            color: #999;
+            font-weight: 400;
         }
 
         .input-icon {
             position: absolute;
-            left: 16px;
+            left: 17px;
             top: 50%;
             transform: translateY(-50%);
             color: #ff8c42;
-            font-size: 16px;
-            transition: 0.3s;
+            font-size: 17px;
+            transition: all 0.3s;
+            pointer-events: none;
         }
 
         .input-field:focus + .input-icon {
-            color: #ff6b35
-        .input-field:focus + .input-icon {
-            color: #8b5cf6;
+            color: #ff6b35;
+            transform: translateY(-50%) scale(1.1);
         }
 
         /* Verified Referral Input */
         .input-field.verified {
             border-color: #10b981;
-            background: rgba(16, 185, 129, 0.05);
-            color: #34d399;
+            background: rgba(16, 185, 129, 0.08);
+            color: #059669;
             font-weight: 600;
         }
         .input-field.verified + .input-icon {
             color: #10b981;
+            transform: translateY(-50%) scale(1.15);
         }
 
-        /* --- BUTTONS --- */ff6b35 0%, #ff8c42 50%, #ffa552 100%);
+        /* --- BUTTONS --- */
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa552 100%);
             width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 600;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 700;
             font-size: 15px;
             color: white;
             text-transform: uppercase;
@@ -155,37 +169,51 @@
         
         .btn-primary:hover {
             box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+            transform: translateY(-2px);
         }
         
         .btn-primary:active {
             transform: scale(0.98);
-            box-shadow: 0 2px 10px rgba(255, 107, 53
-            transform: scale(0.98);
-            box-shadow: 0 2px255, 107, 53, 0.1);
-            border-radius: 12px;
-            padding: 4px;
+            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        /* --- TAB SWITCHER --- */
+        .tab-container {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 107, 53, 0.08);
+            border: 2px solid rgba(255, 107, 53, 0.12);
+            border-radius: 14px;
+            padding: 5px;
             margin-bottom: 24px;
         }
         
         .tab-btn {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 600;
             border-radius: 10px;
             color: var(--text-secondary);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .tab-btn:hover {
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.05);
         }
         
         .tab-btn.active {
             background: linear-gradient(135deg, #ff6b35, #ff8c42);
             color: white;
-            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
-            border: 1px solid rgba(255, 107, 53, 0.2
-        
-        .tab-btn.active {
-            background: #1e293b;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
             color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             border: 1px solid rgba(255,255,255,0.05);
@@ -220,34 +248,94 @@
         @keyframes fadeinTop { from {top: -50px; opacity: 0;} to {top: 20px; opacity: 1;} }
         @keyframes fadeoutTop { from {top: 20px; opacity: 1;} to {top: -50px; opacity: 0;} }
 
+        /* --- LOADING ANIMATION --- */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .btn-primary:disabled {
+            background: linear-gradient(90deg, #ccc 0%, #e0e0e0 50%, #ccc 100%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite;
+            cursor: not-allowed;
+        }
+
+        /* --- RESPONSIVE ENHANCEMENTS --- */
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 28px 20px;
+                max-width: 100%;
+                border-radius: 24px;
+            }
+            
+            .game-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* --- SMOOTH TRANSITIONS --- */
+        * {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="auth-card animate__animated animate__fadeInUp">
         
-        <div class="text-center mb-6">
-            <div class="w-20 h-20 mx-auto bg-gradient-to-tr from-orange-500 to-orange-600 rounded-2xl p-0.5 shadow-2xl mb-3 rotate-3 hover:rotate-0 transition-all duration-500">
-                <img src="images/REG.png" alt="Logo" class="w-full h-full object-cover rounded-xl bg-white">
-            </div>
-            <h1 class="text-3xl font-bold game-title">Trade Club</h1>
-            <p class="text-xs tracking-wide mt-1" style="color: #ff6b35; font-weight: 600;">INVEST • GROW • EARN</p>
+        <!-- Welcome Badge -->
+        <div class="text-center mb-2">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 text-green-700 text-xs font-semibold shadow-sm">
+                <i class="fas fa-check-circle text-green-500"></i>
+                Welcome!
+            </span>
         </div>
 
+        <!-- Logo Section -->
+        <div class="text-center mb-6">
+            <div class="relative inline-block mb-4">
+                <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
+                <div class="relative w-24 h-24 bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 rounded-3xl p-1 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <img src="images/REG.png" alt="Logo" class="w-full h-full object-cover rounded-2xl bg-white">
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold game-title mb-1">Trade Club</h1>
+            <p class="text-sm tracking-widest font-bold" style="color: #ff6b35;">INVEST • GROW • EARN</p>
+        </div>
+
+        <!-- Tab Switcher -->
         <div class="tab-container">
-            <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Login</button>
-            <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Register</button>
+            <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">
+                <i class="fas fa-sign-in-alt mr-1"></i> Login
+            </button>
+            <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">
+                <i class="fas fa-user-plus mr-1"></i> Register
+            </button>
         </div>
 
         <div id="loginForm">
+            <!-- Username Input -->
             <div class="input-group">
                 <input type="text" id="loginUser" class="input-field" placeholder="Username or Mobile">
                 <i class="fas fa-user input-icon"></i>
             </div>
             
+            <!-- Password Input -->
             <div class="input-group">
                 <input type="password" id="loginPass" class="input-field" placeholder="Password">
                 <i class="fas fa-lock input-icon"></i>
+            </div>
+            
+            <!-- Remember Me & Forgot Password -->
+            <div class="flex items-center justify-between mb-6 text-xs">
+                <label class="flex items-center gap-2 cursor-pointer group">
+                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-orange-300 text-orange-600 focus:ring-2 focus:ring-orange-500 focus:ring-offset-0 transition-all">
+                    <span class="text-gray-600 group-hover:text-orange-600 transition-colors">Remember me</span>
+                </label>
+                <a href="#" class="text-orange-600 hover:text-orange-700 font-medium transition-colors">Forgot Password?</a>
+            </div>
             </div>
 
             <div class="flex justify-between items-center text-xs mb-6 px-1" style="color: #666;">
@@ -258,40 +346,65 @@
                 <a href="#" class="hover:text-orange-600 transition">Forgot Password?</a>
             </div>
 
-            <button onclick="login()" class="btn-primary" id="btnLogin">LOGIN NOW</button>
+            <button onclick="login()" class="btn-primary" id="btnLogin">
+                <i class="fas fa-sign-in-alt mr-2"></i> LOGIN NOW
+            </button>
         </div>
 
         <div id="registerForm" class="hidden">
+            <!-- Username Input -->
             <div class="input-group">
                 <input type="text" id="regUser" class="input-field" placeholder="Create Username">
                 <i class="fas fa-user-tag input-icon"></i>
             </div>
 
+            <!-- Mobile Number Input -->
             <div class="input-group">
                 <input type="number" id="regPhone" class="input-field" placeholder="Mobile Number (10 Digits)" 
                        oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
                 <i class="fas fa-mobile-alt input-icon"></i>
             </div>
             
+            <!-- Password Input -->
             <div class="input-group">
                 <input type="password" id="regPass" class="input-field" placeholder="Password (6+ chars)">
                 <i class="fas fa-lock input-icon"></i>
             </div>
 
+            <!-- Referral Code Input -->
             <div class="input-group relative">
                 <input type="text" id="referralCode" class="input-field" placeholder="Referral Code (Required)">
                 <i class="fas fa-gift input-icon" id="refIcon"></i>
-                <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-green-400 font-bold hidden" id="bonusTag">BONUS APPLIED</div>
+                <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-green-400 font-bold hidden" id="bonusTag">🎁 BONUS APPLIED</div>
             </div>
 
+            <!-- Terms Checkbox -->
             <div class="flex items-start gap-2 mb-6 px-1">
-                <input type="checkbox" id="terms" class="mt-1 rounded bg-white/10 border-white/20 accent-indigo-500">
-                <p class="text-xs text-gray-400 leading-tight">
-                    I agree to the <a href="user-agreement.php" class="text-indigo-400 underline">Terms</a> & <a href="user-agreement.php" class="text-indigo-400 underline">Privacy Policy</a>.
+                <input type="checkbox" id="terms" class="mt-1 rounded border-2 border-orange-300 text-orange-600 focus:ring-2 focus:ring-orange-500 focus:ring-offset-0">
+                <p class="text-xs text-gray-600 leading-tight">
+                    I agree to the <a href="user-agreement.php" class="text-orange-600 underline hover:text-orange-700">Terms</a> & <a href="user-agreement.php" class="text-orange-600 underline hover:text-orange-700">Privacy Policy</a>.
                 </p>
             </div>
 
-            <button onclick="register()" class="btn-primary" id="btnReg">CREATE ACCOUNT</button>
+            <button onclick="register()" class="btn-primary" id="btnReg">
+                <i class="fas fa-user-plus mr-2"></i> CREATE ACCOUNT
+            </button>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="mt-6 pt-6 border-t-2 border-gray-200 text-center space-y-3">
+            <p class="text-xs text-gray-500">
+                Secure authentication powered by Trade Club
+            </p>
+            <div class="flex items-center justify-center gap-4 text-xs">
+                <a href="support.php" class="text-orange-600 hover:text-orange-700 font-medium transition-colors">
+                    <i class="fas fa-headset mr-1"></i> Support
+                </a>
+                <span class="text-gray-300">•</span>
+                <a href="user-agreement.php" class="text-orange-600 hover:text-orange-700 font-medium transition-colors">
+                    <i class="fas fa-file-contract mr-1"></i> Terms
+                </a>
+            </div>
         </div>
 
     </div>
