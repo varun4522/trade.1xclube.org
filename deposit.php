@@ -158,7 +158,7 @@ if (isset($conn) && $conn) {
 
   <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
       <div class="absolute top-[-10%] left-[-10%] w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-orange-600/10 rounded-full blur-3xl"></div>
   </div>
 
   <div class="w-full max-w-md flex justify-between items-center mb-6 relative z-10 animate__animated animate__fadeInDown">

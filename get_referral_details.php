@@ -93,7 +93,7 @@ try {
                     <p class="text-sm text-gray-600">Personal Earnings</p>
                 </div>
                 <div class="text-center">
-                    <p class="text-2xl font-bold text-purple-600">₹' . number_format($total_referral_earnings, 2) . '</p>
+                    <p class="text-2xl font-bold text-orange-600">₹' . number_format($total_referral_earnings, 2) . '</p>
                     <p class="text-sm text-gray-600">Total Generated</p>
                 </div>
                 <div class="text-center">

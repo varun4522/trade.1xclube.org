@@ -20,7 +20,7 @@
   
   <div class="glass-effect rounded-2xl p-10 mx-4 max-w-sm w-full text-center animate__animated animate__zoomIn relative z-10">
     <div class="mb-6">
-      <div class="w-20 h-20 rounded-full bg-indigo-500/10 flex items-center justify-center mx-auto border border-indigo-500/20">
+      <div class="w-20 h-20 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto border border-orange-500/20">
         <i class="fas fa-power-off text-indigo-400 text-3xl animate-pulse"></i>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <p class="text-slate-400 text-sm mb-8">Securing your session and assets</p>
     
     <div class="w-full bg-slate-700/50 rounded-full h-1.5 mb-6 overflow-hidden">
-      <div id="progress-bar" class="loader-bar bg-gradient-to-r from-blue-500 to-indigo-600 h-full w-0"></div>
+      <div id="progress-bar" class="loader-bar bg-gradient-to-r from-orange-500 to-orange-600 h-full w-0"></div>
     </div>
 
     <div class="text-xs text-indigo-400/80 flex items-center justify-center gap-2">
@@ -43,7 +43,7 @@
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 40 },
-        "color": { "value": "#6366f1" },
+        "color": { "value": "#ff6b35" },
         "opacity": { "value": 0.3 },
         "size": { "value": 2 },
         "line_linked": { "enable": true, "distance": 150, "color": "#6366f1", "opacity": 0.1, "width": 1 },

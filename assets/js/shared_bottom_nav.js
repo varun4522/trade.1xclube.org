@@ -478,7 +478,7 @@ $paymentMethods = [
     
     .popularity-fill {
       height: 100%;
-      background: linear-gradient(90deg, #10b981, #3b82f6);
+      background: linear-gradient(90deg, #10b981, #ff6b35);
       border-radius: 2px;
     }
     
@@ -530,7 +530,7 @@ $paymentMethods = [
     
     .xp-progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      background: linear-gradient(90deg, #ff6b35, #ff8c42);
       border-radius: 3px;
       transition: width 0.5s ease;
     }
@@ -763,12 +763,12 @@ $paymentMethods = [
     .nav-item.active {
       color: white;
       transform: none !important;
-      background: rgba(139, 92, 246, 0.2);
+      background: rgba(255, 107, 53, 0.2);
     }
     
     .nav-item.active i {
-      color: #8b5cf6;
-      text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+      color: #ff6b35;
+      text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
       transform: none !important;
       transition: none !important;
     }
@@ -787,9 +787,9 @@ $paymentMethods = [
       transform: translateX(-50%);
       width: 5px;
       height: 5px;
-      background: #8b5cf6;
+      background: #ff6b35;
       border-radius: 50%;
-      box-shadow: 0 0 8px #8b5cf6;
+      box-shadow: 0 0 8px #ff6b35;
     }
     
     /* Add space at bottom of page to prevent content hiding */
@@ -872,7 +872,7 @@ $paymentMethods = [
     }
     
     .swiper-pagination-bullet-active {
-      background: #8b5cf6;
+      background: #ff6b35;
     }
     
     /* Payment method selector */
@@ -887,8 +887,8 @@ $paymentMethods = [
     }
     
     .payment-method.selected {
-      border-color: #8b5cf6;
-      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+      border-color: #ff6b35;
+      box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.3);
     }
     
     /* Referral code input */
@@ -981,7 +981,7 @@ $paymentMethods = [
     
     @keyframes flicker {
       0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #8b5cf6, 0 0 20px #8b5cf6;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b35, 0 0 20px #ff6b35;
       }
       20%, 24%, 55% {        
         text-shadow: none;
@@ -1001,7 +1001,7 @@ $paymentMethods = [
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+      background: linear-gradient(45deg, #ff6b35, #ff8c42, #ffa552);
       border-radius: 18px;
       z-index: -1;
       opacity: 0.7;
@@ -1180,14 +1180,14 @@ $paymentMethods = [
         <div class="hidden md:flex items-center space-x-2 bg-white/5 px-3 py-1 rounded-full">
           <i class="fas fa-coins text-yellow-400"></i>
           <span class="text-white font-medium">₹<?= number_format($userBalance) ?></span>
-          <button onclick="showDepositModal()" class="ml-2 text-xs bg-indigo-600 hover:bg-indigo-700 px-2 py-0.5 rounded-full transition-colors touch-feedback">
+          <button onclick="showDepositModal()" class="ml-2 text-xs bg-orange-600 hover:bg-orange-700 px-2 py-0.5 rounded-full transition-colors touch-feedback">
             +
           </button>
         </div>
         
         <div class="relative">
           <button onclick="toggleProfileMenu()" class="flex items-center space-x-2 focus:outline-none">
-            <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-semibold relative">
+            <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-semibold relative">
               <?= strtoupper(substr($username, 0, 1)) ?>
               <?php if($vipStatus): ?>
                 <div class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full vip-badge flex items-center justify-center">
@@ -1307,8 +1307,8 @@ $paymentMethods = [
     <section class="container mx-auto px-4 py-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
         <a href="deposit.html" class="glass-effect p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors touch-feedback card-3d">
-          <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center mb-2">
-            <i class="fas fa-wallet text-xl text-indigo-400"></i>
+          <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mb-2">
+            <i class="fas fa-wallet text-xl text-orange-400"></i>
           </div>
           <h3 class="text-sm md:text-base font-semibold text-white">Deposit</h3>
         </a>
@@ -1321,8 +1321,8 @@ $paymentMethods = [
         </a>
         
         <a href="kyc.html" class="glass-effect p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors touch-feedback card-3d">
-          <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mb-2">
-            <i class="fas fa-gamepad text-xl text-purple-400"></i>
+          <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mb-2">
+            <i class="fas fa-gamepad text-xl text-orange-400"></i>
           </div>
           <h3 class="text-sm md:text-base font-semibold text-white">Kyc</h3>
         </a>
@@ -1630,7 +1630,7 @@ $paymentMethods = [
     // Show toast notification
     function showToast(message) {
       const toast = document.createElement('div');
-      toast.className = 'toast fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate__animated animate__fadeInUp';
+      toast.className = 'toast fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate__animated animate__fadeInUp';
       toast.textContent = message;
       document.body.appendChild(toast);
       

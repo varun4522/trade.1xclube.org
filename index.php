@@ -782,12 +782,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
       font-family: 'Poppins', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
-    
-   
-    
-  
-    }
-    
+
+
+
     .shooting-star::before {
       content: '';
       position: absolute;
@@ -1977,7 +1974,7 @@ header.glass-effect {
   @media (min-width: 768px) {
     .hero-card { padding: 0 0; }
   }
-}</style>
+</style>
 
 <style>
   .hero-dots{ display:flex; justify-content:center; gap:6px; margin-top:8px; }
@@ -2266,7 +2263,7 @@ function goBack() {
             btn.style.background = 'rgba(255,255,255,0.1)';
             btn.style.color = '#9ca3af';
           });
-          document.getElementById('tab-' + category).style.background = 'linear-gradient(135deg, #6366f1, #8b5cf6)';
+          document.getElementById('tab-' + category).style.background = 'linear-gradient(135deg, #ff6b35, #ff8c42)';
           document.getElementById('tab-' + category).style.color = 'white';
 
           // Update plan cards
@@ -2319,13 +2316,13 @@ function goBack() {
             }
           }
         ?>
-        <div class="relative p-3 rounded-lg border border-indigo-500/50 bg-gradient-to-br from-indigo-900/30 to-purple-900/20 shadow-lg hover:shadow-xl transition-all <?= ($status == 'locked') ? 'opacity-50' : '' ?>" data-plan-category="small">
+        <div class="relative p-3 rounded-lg border border-orange-500/50 bg-gradient-to-br from-orange-900/30 to-orange-900/20 shadow-lg hover:shadow-xl transition-all <?= ($status == 'locked') ? 'opacity-50' : '' ?>" data-plan-category="small">
           <div class="flex justify-between items-start mb-2">
             <div>
               <p class="text-sm font-bold text-white">₹<?= number_format($plan['cost']) ?></p>
               <p class="text-xs text-gray-400"><?= $plan['time'] ?> <?= $plan['unit'] ?></p>
             </div>
-            <span class="text-xs bg-indigo-500 px-2 py-1 rounded-full text-white font-bold">+<?= intval(($plan['profit']/$plan['cost'])*100) ?>%</span>
+            <span class="text-xs bg-orange-500 px-2 py-1 rounded-full text-white font-bold">+<?= intval(($plan['profit']/$plan['cost'])*100) ?>%</span>
           </div>
           <div class="text-xs text-gray-300 mb-2">Return: ₹<?= number_format($plan['total']) ?></div>
           <?php if ($status == 'locked'): ?>
@@ -2338,7 +2335,7 @@ function goBack() {
           <?php elseif ($status == 'claim'): ?>
             <button type="button" onclick="claimProfit(<?= $plan['id'] ?>)" class="w-full py-2 bg-green-500/30 text-green-200 font-bold rounded-lg text-xs">Claim Now</button>
           <?php else: ?>
-            <button type="button" onclick="openModal(<?= htmlspecialchars(json_encode($plan)) ?>)" class="w-full py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-bold rounded-lg text-xs">INVEST</button>
+            <button type="button" onclick="openModal(<?= htmlspecialchars(json_encode($plan)) ?>)" class="w-full py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg text-xs">INVEST</button>
           <?php endif; ?>
         </div>
         <?php endforeach; ?>
@@ -2556,17 +2553,17 @@ function goBack() {
 
     <!-- Invest Modal -->
     <div id="investModal" class="modal-overlay hidden" onclick="if(event.target === this) closeModal()">
-      <div class="modal-content bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-2 border-purple-500/50">
+      <div class="modal-content bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-2 border-orange-500/50">
         <div class="text-center mb-6">
-          <div class="w-20 h-20 bg-gradient-to-br from-purple-500/30 to-indigo-600/30 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/50 animate-bounce">
+          <div class="w-20 h-20 bg-gradient-to-br from-orange-500/30 to-orange-600/30 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-500/50 animate-bounce">
             <i class="fas fa-rocket text-purple-400 text-3xl"></i>
           </div>
           <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">🎯 Confirm Investment</h3>
           <p class="text-gray-300 text-xs mt-2">Amount will be deducted immediately from your account</p>
         </div>
 
-        <div class="bg-gradient-to-br from-purple-900/20 to-indigo-900/20 rounded-xl p-5 mb-6 space-y-4 border-2 border-purple-500/40 shadow-lg shadow-purple-500/30">
-          <div class="flex justify-between text-sm bg-black/30 p-3 rounded-lg border border-purple-500/30">
+        <div class="bg-gradient-to-br from-orange-900/20 to-orange-900/20 rounded-xl p-5 mb-6 space-y-4 border-2 border-orange-500/40 shadow-lg shadow-orange-500/30">
+          <div class="flex justify-between text-sm bg-black/30 p-3 rounded-lg border border-orange-500/30">
             <span class="text-gray-300 font-medium">📊 Invest Amount</span>
             <span class="text-yellow-400 font-bold text-lg" id="m_cost">₹0</span>
           </div>
@@ -2574,7 +2571,7 @@ function goBack() {
             <span class="text-gray-300 font-medium">⏱️ Duration</span>
             <span class="text-cyan-400 font-bold text-lg" id="m_time">0 Min</span>
           </div>
-          <div class="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+          <div class="h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent"></div>
           <div class="flex justify-between text-sm bg-black/30 p-3 rounded-lg border border-green-500/30">
             <span class="text-gray-300 font-medium">💰 Total Returns (35%)</span>
             <span class="text-green-400 font-bold text-lg" id="m_return">₹0</span>
@@ -2993,7 +2990,7 @@ function goBack() {
     // Show toast notification
     function showToast(message) {
       const toast = document.createElement('div');
-      toast.className = 'toast fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate__animated animate__fadeInUp';
+      toast.className = 'toast fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate__animated animate__fadeInUp';
       toast.textContent = message;
       document.body.appendChild(toast);
       
