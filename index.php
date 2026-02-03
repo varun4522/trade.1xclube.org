@@ -22,20 +22,29 @@ $db->query("CREATE TABLE IF NOT EXISTS notifications (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
   title TEXT NOT NULL,
+  message TEXT NOT NULL,
   seen TINYINT(1) DEFAULT 0,
   meta JSON DEFAULT NULL,
   created_at INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
 
+// Check if message column exists, if not add it
+$messageColCheck = $db->query("SHOW COLUMNS FROM notifications LIKE 'message'");
+if ($messageColCheck && $messageColCheck->num_rows == 0) {
+  $db->query("ALTER TABLE notifications ADD COLUMN message TEXT NOT NULL AFTER title");
+}
+
 // Helper: add a notification and return boolean success
-function addNotification($db, $userId, $title, $createdAt = null) {
+function addNotification($db, $userId, $title, $createdAt = null, $message = '') {
   $createdAt = $createdAt ?? time();
-  $ins = $db->prepare("INSERT INTO notifications (user_id, title, created_at) VALUES (?, ?, ?)");
+  // Use title as message if message is empty
+  $message = empty($message) ? $title : $message;
+  $ins = $db->prepare("INSERT INTO notifications (user_id, title, message, created_at) VALUES (?, ?, ?, ?)");
   if ($ins === false) {
     error_log('Notify prepare failed: ' . $db->error);
     return false;
   }
-  $ins->bind_param("isi", $userId, $title, $createdAt);
+  $ins->bind_param("issi", $userId, $title, $message, $createdAt);
   if (!$ins->execute()) {
     error_log('Notify execute failed: ' . $db->error . ' | errno: ' . $db->errno);
     return false;
