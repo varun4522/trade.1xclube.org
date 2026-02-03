@@ -23,7 +23,7 @@ $db->query("CREATE TABLE IF NOT EXISTS notifications (
   user_id INT NOT NULL,
   title TEXT NOT NULL,
   message TEXT NOT NULL,
-  sent_by VARCHAR(100) DEFAULT 'system',
+  sent_by INT DEFAULT 0,
   seen TINYINT(1) DEFAULT 0,
   meta JSON DEFAULT NULL,
   created_at INT NOT NULL
@@ -38,11 +38,12 @@ if ($messageColCheck && $messageColCheck->num_rows == 0) {
 // Check if sent_by column exists, if not add it
 $sentByColCheck = $db->query("SHOW COLUMNS FROM notifications LIKE 'sent_by'");
 if ($sentByColCheck && $sentByColCheck->num_rows == 0) {
-  $db->query("ALTER TABLE notifications ADD COLUMN sent_by VARCHAR(100) DEFAULT 'system' AFTER message");
+  $db->query("ALTER TABLE notifications ADD COLUMN sent_by INT DEFAULT 0 AFTER message");
 }
 
 // Helper: add a notification and return boolean success
-function addNotification($db, $userId, $title, $createdAt = null, $message = '', $sentBy = 'system') {
+// $sentBy is an integer: 0 = system, otherwise a user/admin id
+function addNotification($db, $userId, $title, $createdAt = null, $message = '', $sentBy = 0) {
   $createdAt = $createdAt ?? time();
   // Use title as message if message is empty
   $message = empty($message) ? $title : $message;
@@ -51,7 +52,8 @@ function addNotification($db, $userId, $title, $createdAt = null, $message = '',
     error_log('Notify prepare failed: ' . $db->error);
     return false;
   }
-  $ins->bind_param("isssi", $userId, $title, $message, $sentBy, $createdAt);
+  // user_id (i), title (s), message (s), sent_by (i), created_at (i)
+  $ins->bind_param("issii", $userId, $title, $message, $sentBy, $createdAt);
   if (!$ins->execute()) {
     error_log('Notify execute failed: ' . $db->error . ' | errno: ' . $db->errno);
     return false;
