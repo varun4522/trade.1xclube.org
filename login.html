@@ -143,6 +143,8 @@
                     <p class="text-gray-600">Login to your account</p>
                 </div>
 
+                <div id="errorMessage" class="hidden mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm"></div>
+                
                 <form class="space-y-6" method="POST" id="loginForm">                    
                     <div class="space-y-5">
                         <div>
@@ -205,15 +207,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             const loginButton = document.getElementById('loginButton');
             const loginForm = document.getElementById('loginForm');
+            const errorMessage = document.getElementById('errorMessage');
             
             // Button hover effect
             loginButton.addEventListener('mouseenter', function() {
                 createParticles(this);
             });
             
-            // Form submission animation
-            loginForm.addEventListener('submit', function(e) {
+            // Form submission with authentication
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Hide error message
+                errorMessage.classList.add('hidden');
+                
+                // Disable button and show loading state
                 loginButton.disabled = true;
+                const originalButtonContent = loginButton.innerHTML;
                 loginButton.innerHTML = `
                     <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -221,6 +231,47 @@
                     </svg>
                     Authenticating...
                 `;
+                
+                // Get form data
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                
+                try {
+                    // Send login request to API
+                    const response = await fetch('api/login.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            username: username,
+                            password: password
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Login successful - redirect to index page
+                        window.location.href = 'index.php';
+                    } else {
+                        // Show error message
+                        errorMessage.textContent = data.error || 'Login failed. Please try again.';
+                        errorMessage.classList.remove('hidden');
+                        
+                        // Reset button
+                        loginButton.disabled = false;
+                        loginButton.innerHTML = originalButtonContent;
+                    }
+                } catch (error) {
+                    // Handle network or other errors
+                    errorMessage.textContent = 'Connection error. Please try again.';
+                    errorMessage.classList.remove('hidden');
+                    
+                    // Reset button
+                    loginButton.disabled = false;
+                    loginButton.innerHTML = originalButtonContent;
+                }
             });
             
             // Create particle effect
